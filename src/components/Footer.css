@@ -1,0 +1,29 @@
+.footer {
+    background-color: #353799; /* Footer background color */
+    color: #7CE3FB; /* Footer text color */
+    padding: 20px;
+    border-top: 1px solid #5399E8; /* Footer border */
+    text-align: center;
+    position: fixed; /* Fixes the footer to the bottom of the viewport */
+    bottom: 0; /* Positions it at the bottom */
+    left: 0; /* Ensures it starts from the left */
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Makes sure it is above other elements */
+  }
+  
+  .footer-links {
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: center; /* Center align the links */
+    gap: 10px; /* Add some space between links */
+  }
+  
+  .footer-link {
+    color: #7CE3FB; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color change */
+  }
+  
+  .footer-link:hover {
+    color: #ffffff; /* Change color on hover */
+  }
+  

@@ -1,0 +1,40 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 60px;
+  background-color: #f8f9fa;
+}
+
+.hero-title {
+  font-size: 1rem; /* Smaller font size for mobile */
+  font-weight: bold;
+  color: #353799;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Screenshot gallery adjustments */
+.screenshot-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.screenshot {
+  width: 150px; /* Smaller size for mobile */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Larger screen adjustments */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .screenshot {
+    width: 200px;
+  }
+}

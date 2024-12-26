@@ -1,0 +1,71 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; /* Smaller padding on mobile */
+  background: linear-gradient(45deg, #7CE3FB, #5399E8, #353799);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  width: 60px; /* Smaller logo on mobile */
+  height: 60px;
+}
+
+/* Larger size for desktop screens */
+@media (min-width: 768px) {
+.logo {
+  width: 100px; 
+  height: 1000px;
+}
+}
+
+.app-title {
+  font-size: 1rem; /* Smaller font size for mobile */
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+/* Larger size for desktop screens */
+@media (min-width: 768px) {
+.app-title {
+  font-size: 2.4rem; 
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+}
+
+.google-play-badge {
+  height: 30px; /* Reduce size on mobile */
+}
+
+/* Larger size for desktop screens */
+@media (min-width: 768px) {
+  .google-play-badge {
+    height: 60px;
+  }
+}
+
+/* Larger screen adjustments */
+@media (min-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .app-title {
+    font-size: 2.4rem;
+  }
+
+  .google-play-badge {
+    height: 80px;
+  }
+}

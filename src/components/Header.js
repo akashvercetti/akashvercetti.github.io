@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/">
-        <img src={logo} alt="App Logo" className="logo" />
+        <img src={logo} alt="GameShortsXP Logo" className="logo" />
       </Link>
       <h1 className="app-title">GameShortsXP</h1> {/* Centered app title */}
       <a href="https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp">

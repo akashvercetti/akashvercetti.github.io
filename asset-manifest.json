@@ -1,21 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.84ab2c0a.css",
-    "main.js": "/static/js/main.a2d07b40.js",
+    "main.css": "/static/css/main.9f094b76.css",
+    "main.js": "/static/js/main.353dd495.js",
     "static/js/453.f1ea2376.chunk.js": "/static/js/453.f1ea2376.chunk.js",
     "static/media/screenshot2.png": "/static/media/screenshot2.89ff4f95e7ab645cf639.png",
     "static/media/screenshot3.png": "/static/media/screenshot3.7b79e8ec422cba5337e0.png",
     "static/media/screenshot4.png": "/static/media/screenshot4.6cb5ffe9739219ae3cdd.png",
     "static/media/screenshot5.png": "/static/media/screenshot5.06d755c451d8aaf7928a.png",
     "static/media/screenshot1.png": "/static/media/screenshot1.c1c70c107e35300ce5b2.png",
+    "static/media/iheart-logo.png": "/static/media/iheart-logo.02bffdbbc8ac58b8c470.png",
     "static/media/icon.png": "/static/media/icon.b4222aeb0d808d6800e1.png",
+    "static/media/jiosaavn-logo.png": "/static/media/jiosaavn-logo.f92f7c2689f76f91ba61.png",
+    "static/media/amazon-music-logo.png": "/static/media/amazon-music-logo.f2d395d9f4e8305900c6.png",
+    "static/media/youtube-logo.png": "/static/media/youtube-logo.dacc7e807dd7a4cbd3f7.png",
+    "static/media/spotify-badge.png": "/static/media/spotify-badge.81b5f63b8e0a6b8a1d14.png",
     "index.html": "/index.html",
-    "main.84ab2c0a.css.map": "/static/css/main.84ab2c0a.css.map",
-    "main.a2d07b40.js.map": "/static/js/main.a2d07b40.js.map",
+    "main.9f094b76.css.map": "/static/css/main.9f094b76.css.map",
+    "main.353dd495.js.map": "/static/js/main.353dd495.js.map",
     "453.f1ea2376.chunk.js.map": "/static/js/453.f1ea2376.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84ab2c0a.css",
-    "static/js/main.a2d07b40.js"
+    "static/css/main.9f094b76.css",
+    "static/js/main.353dd495.js"
   ]
 }

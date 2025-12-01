@@ -136,7 +136,7 @@
 .screenshot-gallery {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
@@ -146,7 +146,7 @@
 }
 
 .screenshot {
-  width: 160px;
+  width: 130px;
   border-radius: 12px;
   box-shadow: 
     0 0 20px rgba(0, 255, 163, 0.3),

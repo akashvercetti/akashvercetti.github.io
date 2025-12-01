@@ -1,29 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
 .footer {
-    background-color: #353799; /* Footer background color */
-    color: #7CE3FB; /* Footer text color */
-    padding: 20px;
-    border-top: 1px solid #5399E8; /* Footer border */
-    text-align: center;
-    position: fixed; /* Fixes the footer to the bottom of the viewport */
-    bottom: 0; /* Positions it at the bottom */
-    left: 0; /* Ensures it starts from the left */
-    width: 100%; /* Ensure it spans the full width */
-    z-index: 1000; /* Makes sure it is above other elements */
+  background: linear-gradient(135deg, #0f1535 0%, #1a1f3a 100%);
+  color: #00ffa3;
+  padding: 20px;
+  border-top: 2px solid rgba(0, 255, 163, 0.3);
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  font-family: 'Rajdhani', sans-serif;
+  box-shadow: 
+    0 -4px 20px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 255, 163, 0.1);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(0, 255, 163, 0.8) 20%,
+    rgba(255, 0, 128, 0.8) 50%,
+    rgba(0, 150, 255, 0.8) 80%,
+    transparent 100%);
+  animation: borderFlow 3s linear infinite reverse;
+}
+
+@keyframes borderFlow {
+  0% {
+    transform: translateX(-100%);
   }
-  
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: #00ffa3;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 255, 163, 0.3);
+  position: relative;
+  padding: 5px 10px;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0, 255, 163, 0.8), rgba(255, 0, 128, 0.8));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-link:hover {
+  color: #ff0080;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 128, 0.6),
+    0 0 20px rgba(255, 0, 128, 0.4);
+  transform: translateY(-2px);
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+.footer-links span {
+  color: rgba(0, 255, 163, 0.5);
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 255, 163, 0.2);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .footer {
+    padding: 25px 40px;
+  }
+
   .footer-links {
-    display: flex; /* Use flexbox for better alignment */
-    justify-content: center; /* Center align the links */
-    gap: 10px; /* Add some space between links */
+    font-size: 1.1rem;
+    gap: 20px;
   }
-  
-  .footer-link {
-    color: #7CE3FB; /* Link color */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Smooth color change */
+}
+
+@media (min-width: 1024px) {
+  .footer-links {
+    font-size: 1.15rem;
   }
-  
-  .footer-link:hover {
-    color: #ffffff; /* Change color on hover */
-  }
-  
+}

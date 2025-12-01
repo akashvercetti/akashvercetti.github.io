@@ -1,59 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&display=swap');
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px; /* Smaller padding on mobile */
-  background: linear-gradient(45deg, #7CE3FB, #5399E8, #353799);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #0f1535 0%, #1a1f3a 100%);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(0, 255, 163, 0.1);
+  border-bottom: 2px solid rgba(0, 255, 163, 0.3);
+  position: relative;
+  z-index: 100;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(0, 255, 163, 0.8) 20%,
+    rgba(255, 0, 128, 0.8) 50%,
+    rgba(0, 150, 255, 0.8) 80%,
+    transparent 100%);
+  animation: borderFlow 3s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 .logo {
-  width: 60px; /* Smaller logo on mobile */
+  width: 60px;
   height: 60px;
+  border-radius: 12px;
+  box-shadow: 
+    0 0 15px rgba(0, 255, 163, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(0, 255, 163, 0.3);
+  animation: logoPulse 3s ease-in-out infinite;
 }
 
-/* Larger size for desktop screens */
-@media (min-width: 768px) {
-.logo {
-  width: 100px; 
-  height: 1000px;
+@keyframes logoPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 15px rgba(0, 255, 163, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 25px rgba(0, 255, 163, 0.6),
+      0 4px 12px rgba(0, 0, 0, 0.4);
+  }
 }
+
+.logo:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 163, 0.6),
+    0 0 40px rgba(255, 0, 128, 0.3),
+    0 6px 16px rgba(0, 0, 0, 0.5);
+  border-color: rgba(0, 255, 163, 0.6);
 }
 
 .app-title {
-  font-size: 1rem; /* Smaller font size for mobile */
-  color: white;
-  font-weight: bold;
+  font-size: 1.2rem;
+  color: #00ffa3;
+  font-weight: 900;
+  font-family: 'Orbitron', sans-serif;
   text-align: center;
   flex-grow: 1;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 
+    0 0 10px rgba(0, 255, 163, 0.5),
+    0 0 20px rgba(0, 255, 163, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.8);
+  animation: titleGlow 2s ease-in-out infinite;
+  margin: 0 10px;
 }
 
-/* Larger size for desktop screens */
-@media (min-width: 768px) {
-.app-title {
-  font-size: 2.4rem; 
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  flex-grow: 1;
-}
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 255, 163, 0.5),
+      0 0 20px rgba(0, 255, 163, 0.3),
+      0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(0, 255, 163, 0.7),
+      0 0 30px rgba(0, 255, 163, 0.5),
+      0 2px 4px rgba(0, 0, 0, 0.8);
+  }
 }
 
 .google-play-badge {
-  height: 30px; /* Reduce size on mobile */
+  height: 35px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 163, 0.3));
 }
 
-/* Larger size for desktop screens */
-@media (min-width: 768px) {
-  .google-play-badge {
-    height: 60px;
-  }
+.google-play-badge:hover {
+  transform: scale(1.05);
+  filter: 
+    drop-shadow(0 0 12px rgba(0, 255, 163, 0.5))
+    drop-shadow(0 0 20px rgba(255, 0, 128, 0.3));
 }
 
 /* Larger screen adjustments */
 @media (min-width: 768px) {
   .header {
-    padding: 20px;
+    padding: 20px 40px;
+  }
+
+  .logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 16px;
+  }
+
+  .app-title {
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+  }
+
+  .google-play-badge {
+    height: 55px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding: 25px 60px;
   }
 
   .logo {
@@ -62,10 +151,10 @@
   }
 
   .app-title {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
   }
 
   .google-play-badge {
-    height: 80px;
+    height: 65px;
   }
 }

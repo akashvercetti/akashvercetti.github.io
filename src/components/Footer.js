@@ -9,6 +9,8 @@ const Footer = () => {
         <Link to="/contact-us" className="footer-link">Contact Us</Link>
         <span> | </span> {/* Separator */}
         <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
+        <span> | </span> {/* Separator */}
+        <Link to="/podcast" className="footer-link">Podcast</Link>
       </div>
     </footer>
   );

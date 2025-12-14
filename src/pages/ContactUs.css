@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rajdhani:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@500;600;700&display=swap');
 
 .contact-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 60px 30px;
-  background: linear-gradient(135deg, #1a1f3a 0%, #0f1535 100%);
-  color: #c7d2fe;
+  background: linear-gradient(135deg, #2d1b3d 0%, #1a0a2e 100%);
+  color: #e0d0ff;
   min-height: calc(100vh - 200px);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Teko', sans-serif;
   border-radius: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
   box-shadow: 
-    0 0 40px rgba(0, 255, 163, 0.2),
+    0 0 40px rgba(255, 16, 240, 0.25),
     0 20px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 163, 0.2);
+  border: 1px solid rgba(255, 16, 240, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -28,7 +28,7 @@
   height: 3px;
   background: linear-gradient(90deg, 
     transparent 0%,
-    rgba(0, 255, 163, 0.8) 50%,
+    rgba(255, 16, 240, 0.8) 50%,
     transparent 100%);
   animation: scanline 3s linear infinite;
 }
@@ -50,24 +50,24 @@
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(0, 255, 163, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 163, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 16, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   opacity: 0.3;
 }
 
 .contact-container h2 {
-  color: #00ffa3;
-  font-size: 2.5rem;
-  font-weight: 800;
-  font-family: 'Orbitron', sans-serif;
+  color: #FF10F0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 30px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-shadow: 
-    0 0 10px rgba(0, 255, 163, 0.5),
-    0 0 20px rgba(0, 255, 163, 0.3);
+    0 0 15px rgba(255, 16, 240, 0.7),
+    0 0 30px rgba(255, 16, 240, 0.4);
   position: relative;
   z-index: 1;
   padding-bottom: 20px;
@@ -78,27 +78,27 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 80px;
+  width: 100px;
   height: 3px;
-  background: linear-gradient(90deg, #00ffa3, rgba(255, 0, 128, 0.5), transparent);
-  box-shadow: 0 0 10px rgba(0, 255, 163, 0.5);
+  background: linear-gradient(90deg, #FF10F0, #00FFFF, transparent);
+  box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
 }
 
 .contact-container p {
   margin-bottom: 20px;
   line-height: 1.8;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   position: relative;
   z-index: 1;
 }
 
 .contact-container a {
-  color: #00ffa3;
+  color: #00FFFF;
   text-decoration: none;
   font-weight: 700;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px rgba(0, 255, 163, 0.3);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
   position: relative;
   padding: 2px 8px;
   border-radius: 4px;
@@ -108,24 +108,24 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 255, 163, 0.1);
+  background: rgba(0, 255, 255, 0.1);
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .contact-container a:hover {
-  color: #ff0080;
+  color: #FF10F0;
   text-shadow: 
-    0 0 10px rgba(255, 0, 128, 0.6),
-    0 0 20px rgba(255, 0, 128, 0.4);
+    0 0 15px rgba(255, 16, 240, 0.7),
+    0 0 25px rgba(255, 16, 240, 0.5);
   transform: translateY(-1px);
 }
 
 .contact-container a:hover::before {
   opacity: 1;
-  background: rgba(255, 0, 128, 0.1);
-  box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  background: rgba(255, 16, 240, 0.15);
+  box-shadow: 0 0 20px rgba(255, 16, 240, 0.4);
 }
 
 /* Responsive adjustments */
@@ -137,11 +137,11 @@
   }
 
   .contact-container h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .contact-container p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -153,6 +153,6 @@
   }
 
   .contact-container h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }

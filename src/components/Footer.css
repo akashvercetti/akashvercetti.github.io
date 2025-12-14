@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600;700&display=swap');
 
 .footer {
-  background: linear-gradient(135deg, #0f1535 0%, #1a1f3a 100%);
-  color: #00ffa3;
+  background: linear-gradient(135deg, #1a0a2e 0%, #2d1b3d 100%);
+  color: #FF10F0;
   padding: 20px;
-  border-top: 2px solid rgba(0, 255, 163, 0.3);
+  border-top: 3px solid rgba(255, 16, 240, 0.4);
   text-align: center;
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Teko', sans-serif;
   box-shadow: 
     0 -4px 20px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(0, 255, 163, 0.1);
+    0 0 40px rgba(255, 16, 240, 0.15);
   position: relative;
 }
 
@@ -24,13 +24,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 3px;
   background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(0, 255, 163, 0.8) 20%,
-    rgba(255, 0, 128, 0.8) 50%,
-    rgba(0, 150, 255, 0.8) 80%,
-    transparent 100%);
+    rgba(255, 16, 240, 0.8) 0%,
+    rgba(0, 255, 255, 0.8) 50%,
+    rgba(255, 16, 240, 0.8) 100%);
   animation: borderFlow 3s linear infinite reverse;
 }
 
@@ -51,14 +49,14 @@
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
 }
 
 .footer-link {
-  color: #00ffa3;
+  color: #FF10F0;
   text-decoration: none;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px rgba(0, 255, 163, 0.3);
+  text-shadow: 0 0 8px rgba(255, 16, 240, 0.4);
   position: relative;
   padding: 5px 10px;
 }
@@ -70,16 +68,16 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, rgba(0, 255, 163, 0.8), rgba(255, 0, 128, 0.8));
+  background: linear-gradient(90deg, rgba(255, 16, 240, 0.8), rgba(0, 255, 255, 0.8));
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }
 
 .footer-link:hover {
-  color: #ff0080;
+  color: #00FFFF;
   text-shadow: 
-    0 0 10px rgba(255, 0, 128, 0.6),
-    0 0 20px rgba(255, 0, 128, 0.4);
+    0 0 10px rgba(0, 255, 255, 0.7),
+    0 0 20px rgba(0, 255, 255, 0.5);
   transform: translateY(-2px);
 }
 
@@ -88,9 +86,9 @@
 }
 
 .footer-links span {
-  color: rgba(0, 255, 163, 0.5);
+  color: rgba(255, 16, 240, 0.5);
   font-weight: 600;
-  text-shadow: 0 0 5px rgba(0, 255, 163, 0.2);
+  text-shadow: 0 0 5px rgba(255, 16, 240, 0.2);
 }
 
 /* Responsive adjustments */
@@ -100,13 +98,13 @@
   }
 
   .footer-links {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     gap: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .footer-links {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
   }
 }

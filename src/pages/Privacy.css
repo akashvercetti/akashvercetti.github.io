@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rajdhani:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@500;600;700&display=swap');
 
 .privacy-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 30px;
-  background: linear-gradient(135deg, #1a1f3a 0%, #0f1535 100%);
-  color: #c7d2fe;
+  background: linear-gradient(135deg, #2d1b3d 0%, #1a0a2e 100%);
+  color: #e0d0ff;
   min-height: calc(100vh - 200px);
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Teko', sans-serif;
   border-radius: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
   box-shadow: 
-    0 0 40px rgba(0, 255, 163, 0.2),
+    0 0 40px rgba(255, 16, 240, 0.25),
     0 20px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(0, 255, 163, 0.2);
+  border: 1px solid rgba(255, 16, 240, 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -28,7 +28,7 @@
   height: 3px;
   background: linear-gradient(90deg, 
     transparent 0%,
-    rgba(0, 255, 163, 0.8) 50%,
+    rgba(255, 16, 240, 0.8) 50%,
     transparent 100%);
   animation: scanline 3s linear infinite;
 }
@@ -50,24 +50,24 @@
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(0, 255, 163, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 163, 0.02) 1px, transparent 1px);
+    linear-gradient(rgba(255, 16, 240, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   opacity: 0.3;
 }
 
 .privacy-container h1 {
-  color: #00ffa3;
-  font-size: 2.5rem;
-  font-weight: 900;
-  font-family: 'Orbitron', sans-serif;
+  color: #FF10F0;
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Bebas Neue', sans-serif;
   margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-shadow: 
-    0 0 10px rgba(0, 255, 163, 0.5),
-    0 0 20px rgba(0, 255, 163, 0.3);
+    0 0 15px rgba(255, 16, 240, 0.7),
+    0 0 30px rgba(255, 16, 240, 0.4);
   position: relative;
   z-index: 1;
   padding-bottom: 20px;
@@ -80,36 +80,36 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
+  width: 140px;
   height: 3px;
   background: linear-gradient(90deg, 
     transparent, 
-    #00ffa3, 
-    rgba(255, 0, 128, 0.5), 
+    #FF10F0, 
+    #00FFFF, 
     transparent);
-  box-shadow: 0 0 10px rgba(0, 255, 163, 0.5);
+  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
 }
 
 .privacy-container h3 {
-  color: #ff0080;
-  font-size: 1.5rem;
+  color: #00FFFF;
+  font-size: 1.8rem;
   font-weight: 700;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   margin-top: 40px;
   margin-bottom: 15px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(255, 0, 128, 0.4);
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
   position: relative;
   z-index: 1;
   padding-left: 15px;
-  border-left: 3px solid #ff0080;
+  border-left: 3px solid #00FFFF;
 }
 
 .privacy-container p {
   margin-bottom: 20px;
   line-height: 1.8;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
   position: relative;
   z-index: 1;
@@ -129,7 +129,7 @@
   padding-left: 32px;
   position: relative;
   line-height: 1.8;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 
@@ -137,19 +137,19 @@
   content: '▶';
   position: absolute;
   left: 0;
-  color: #00ffa3;
+  color: #FF10F0;
   font-weight: bold;
   font-size: 0.9rem;
-  text-shadow: 0 0 5px rgba(0, 255, 163, 0.5);
+  text-shadow: 0 0 8px rgba(255, 16, 240, 0.6);
   top: 2px;
 }
 
 .privacy-container a {
-  color: #00ffa3;
+  color: #00FFFF;
   text-decoration: none;
   font-weight: 700;
   transition: all 0.3s ease;
-  text-shadow: 0 0 5px rgba(0, 255, 163, 0.3);
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
   position: relative;
   padding: 2px 6px;
   border-radius: 4px;
@@ -159,60 +159,60 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 255, 163, 0.1);
+  background: rgba(0, 255, 255, 0.1);
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .privacy-container a:hover {
-  color: #ff0080;
+  color: #FF10F0;
   text-shadow: 
-    0 0 10px rgba(255, 0, 128, 0.6),
-    0 0 20px rgba(255, 0, 128, 0.4);
+    0 0 15px rgba(255, 16, 240, 0.7),
+    0 0 25px rgba(255, 16, 240, 0.5);
 }
 
 .privacy-container a:hover::before {
   opacity: 1;
-  background: rgba(255, 0, 128, 0.1);
-  box-shadow: 0 0 15px rgba(255, 0, 128, 0.3);
+  background: rgba(255, 16, 240, 0.15);
+  box-shadow: 0 0 20px rgba(255, 16, 240, 0.4);
 }
 
 .privacy-container button {
-  background: linear-gradient(135deg, #00ffa3 0%, #00d4a0 100%);
-  color: #0a0e27;
-  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(135deg, #FF10F0 0%, #ff006e 100%);
+  color: #ffffff;
+  font-family: 'Teko', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
-  padding: 8px 16px;
+  font-size: 1.1rem;
+  padding: 10px 20px;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 
-    0 0 15px rgba(0, 255, 163, 0.3),
+    0 0 20px rgba(255, 16, 240, 0.4),
     0 4px 12px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(0, 255, 163, 0.5);
+  border: 1px solid rgba(255, 16, 240, 0.6);
 }
 
 .privacy-container button:hover {
-  background: linear-gradient(135deg, #ff0080 0%, #d6006d 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #00FFFF 0%, #00d4ff 100%);
+  color: #0f0520;
   box-shadow: 
-    0 0 20px rgba(255, 0, 128, 0.5),
+    0 0 25px rgba(0, 255, 255, 0.6),
     0 6px 16px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
-  border-color: rgba(255, 0, 128, 0.6);
+  border-color: rgba(0, 255, 255, 0.8);
 }
 
 .privacy-container blockquote {
-  border-left: 3px solid rgba(0, 150, 255, 0.5);
+  border-left: 3px solid rgba(255, 100, 0, 0.6);
   padding-left: 20px;
   margin: 25px 0;
   font-style: italic;
-  color: #a0aec0;
-  background: rgba(0, 150, 255, 0.05);
+  color: #c0b0d0;
+  background: rgba(255, 100, 0, 0.08);
   padding: 15px 15px 15px 25px;
   border-radius: 8px;
   position: relative;
@@ -228,19 +228,19 @@
   }
 
   .privacy-container h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .privacy-container h3 {
-    font-size: 1.75rem;
+    font-size: 2.2rem;
   }
 
   .privacy-container p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .privacy-container ul li {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -252,10 +252,10 @@
   }
 
   .privacy-container h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .privacy-container h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 }

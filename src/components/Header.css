@@ -1,162 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: linear-gradient(135deg, #1a0a2e 0%, #2d1b3d 100%);
-  box-shadow: 
-    0 4px 20px rgba(0, 0, 0, 0.5),
-    0 0 40px rgba(255, 16, 240, 0.15);
-  border-bottom: 3px solid rgba(255, 16, 240, 0.4);
+  background: #0d1130;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.2);
   position: relative;
   z-index: 100;
+  box-shadow: 0 4px 30px rgba(0, 245, 255, 0.08);
 }
 
-.header::before {
+/* Animated neon gradient line at bottom of header */
+.header::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    rgba(255, 16, 240, 0.8) 0%,
-    rgba(0, 255, 255, 0.8) 50%,
-    rgba(255, 16, 240, 0.8) 100%);
-  animation: borderFlow 3s linear infinite;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00f5ff,
+    #ff0080,
+    #00ffa3,
+    #00f5ff,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: neonScan 4s linear infinite;
 }
 
-@keyframes borderFlow {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+@keyframes neonScan {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .logo {
   width: 60px;
   height: 60px;
-  border-radius: 12px;
-  box-shadow: 
-    0 0 20px rgba(255, 16, 240, 0.5),
-    0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 245, 255, 0.5);
+  border-radius: 8px;
+  box-shadow:
+    0 0 10px rgba(0, 245, 255, 0.3),
+    0 0 25px rgba(0, 245, 255, 0.1);
   transition: all 0.3s ease;
-  border: 2px solid rgba(0, 255, 255, 0.4);
-  animation: logoPulse 3s ease-in-out infinite;
-}
-
-@keyframes logoPulse {
-  0%, 100% {
-    box-shadow: 
-      0 0 20px rgba(255, 16, 240, 0.5),
-      0 4px 12px rgba(0, 0, 0, 0.4);
-  }
-  50% {
-    box-shadow: 
-      0 0 30px rgba(255, 16, 240, 0.7),
-      0 0 40px rgba(0, 255, 255, 0.4),
-      0 4px 12px rgba(0, 0, 0, 0.4);
-  }
 }
 
 .logo:hover {
-  transform: scale(1.05) rotate(5deg);
-  box-shadow: 
-    0 0 30px rgba(255, 16, 240, 0.8),
-    0 0 50px rgba(0, 255, 255, 0.5),
-    0 6px 16px rgba(0, 0, 0, 0.5);
-  border-color: rgba(255, 16, 240, 0.8);
+  border-color: #00f5ff;
+  box-shadow:
+    0 0 16px rgba(0, 245, 255, 0.6),
+    0 0 40px rgba(0, 245, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .app-title {
+  font-family: 'Orbitron', sans-serif;
   font-size: 1.2rem;
-  color: #FF10F0;
-  font-weight: 700;
-  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  color: #ffffff;
   text-align: center;
   flex-grow: 1;
   letter-spacing: 3px;
   text-transform: uppercase;
-  text-shadow: 
-    0 0 10px rgba(255, 16, 240, 0.6),
-    0 0 20px rgba(255, 16, 240, 0.4),
-    0 0 30px rgba(0, 255, 255, 0.3),
-    0 2px 4px rgba(0, 0, 0, 0.8);
-  animation: titleGlow 2s ease-in-out infinite;
-  margin: 0 10px;
+  margin: 0 16px;
+  line-height: 1.4;
+  text-shadow:
+    0 0 10px rgba(0, 245, 255, 0.6),
+    0 0 30px rgba(0, 245, 255, 0.2);
+  animation: titlePulse 4s ease-in-out infinite;
 }
 
-@keyframes titleGlow {
-  0%, 100% {
-    text-shadow: 
-      0 0 10px rgba(255, 16, 240, 0.6),
-      0 0 20px rgba(255, 16, 240, 0.4),
-      0 0 30px rgba(0, 255, 255, 0.3),
-      0 2px 4px rgba(0, 0, 0, 0.8);
-  }
-  50% {
-    text-shadow: 
-      0 0 15px rgba(255, 16, 240, 0.8),
-      0 0 30px rgba(255, 16, 240, 0.6),
-      0 0 45px rgba(0, 255, 255, 0.5),
-      0 2px 4px rgba(0, 0, 0, 0.8);
-  }
+@keyframes titlePulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(0, 245, 255, 0.6), 0 0 30px rgba(0, 245, 255, 0.2); }
+  50%       { text-shadow: 0 0 18px rgba(0, 245, 255, 0.9), 0 0 50px rgba(0, 245, 255, 0.35); }
 }
 
 .google-play-badge {
   height: 35px;
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 6px;
+  padding: 3px;
+  background: rgba(0, 245, 255, 0.05);
   transition: all 0.3s ease;
-  filter: drop-shadow(0 0 10px rgba(255, 16, 240, 0.4));
+  filter: saturate(1.2);
 }
 
 .google-play-badge:hover {
-  transform: scale(1.05);
-  filter: 
-    drop-shadow(0 0 15px rgba(255, 16, 240, 0.6))
-    drop-shadow(0 0 25px rgba(0, 255, 255, 0.4));
+  border-color: #00f5ff;
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.4);
+  transform: translateY(-2px);
 }
 
-/* Larger screen adjustments */
+/* Mobile */
+@media (max-width: 480px) {
+  .header { padding: 10px 15px; }
+  .logo { width: 42px; height: 42px; }
+  .app-title { font-size: 0.75rem; letter-spacing: 1.5px; margin: 0 8px; }
+  .google-play-badge { height: 28px; }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+  .logo { width: 52px; height: 52px; }
+  .app-title { font-size: 1rem; letter-spacing: 2px; }
+  .google-play-badge { height: 32px; }
+}
+
+/* Desktop */
 @media (min-width: 768px) {
-  .header {
-    padding: 20px 40px;
-  }
-
-  .logo {
-    width: 90px;
-    height: 90px;
-    border-radius: 16px;
-  }
-
-  .app-title {
-    font-size: 2.2rem;
-    letter-spacing: 4px;
-  }
-
-  .google-play-badge {
-    height: 55px;
-  }
+  .header { padding: 20px 40px; }
+  .logo { width: 80px; height: 80px; }
+  .app-title { font-size: 1.8rem; letter-spacing: 4px; }
+  .google-play-badge { height: 50px; }
 }
 
 @media (min-width: 1024px) {
-  .header {
-    padding: 25px 60px;
-  }
-
-  .logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .app-title {
-    font-size: 2.5rem;
-  }
-
-  .google-play-badge {
-    height: 65px;
-  }
+  .header { padding: 22px 60px; }
+  .logo { width: 90px; height: 90px; }
+  .app-title { font-size: 2rem; }
+  .google-play-badge { height: 58px; }
 }

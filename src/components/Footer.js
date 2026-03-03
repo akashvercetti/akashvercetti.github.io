@@ -10,7 +10,7 @@ const Footer = () => {
         <span> | </span> {/* Separator */}
         <Link to="/privacy-policy" className="footer-link">Privacy Policy</Link>
         <span> | </span> {/* Separator */}
-        <Link to="/podcast" className="footer-link">Podcast</Link>
+        <Link to="/invertedcontrolfreak" className="footer-link">YouTube Channel</Link>
       </div>
     </footer>
   );

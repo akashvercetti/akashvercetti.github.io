@@ -1,77 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rajdhani:wght@500;600;700&display=swap');
 
 .privacy-container {
   max-width: 900px;
-  margin: 0 auto;
-  padding: 60px 30px;
-  background: linear-gradient(135deg, #2d1b3d 0%, #1a0a2e 100%);
-  color: #e0d0ff;
+  margin: 40px auto;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #0d1130 0%, #0f1535 100%);
+  color: #c7d2fe;
   min-height: calc(100vh - 200px);
-  font-family: 'Teko', sans-serif;
-  border-radius: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  box-shadow: 
-    0 0 40px rgba(255, 16, 240, 0.25),
-    0 20px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 16, 240, 0.3);
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 0 40px rgba(0, 245, 255, 0.07),
+    0 20px 60px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* Animated top border */
 .privacy-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(255, 16, 240, 0.8) 50%,
-    transparent 100%);
-  animation: scanline 3s linear infinite;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff0080, #00f5ff, #00ffa3, transparent);
+  background-size: 200% 100%;
+  animation: neonScan 4s linear infinite reverse;
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+@keyframes neonScan {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
+/* Subtle grid overlay */
 .privacy-container::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255, 16, 240, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
-  opacity: 0.3;
 }
 
 .privacy-container h1 {
-  color: #FF10F0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f5ff;
+  font-size: clamp(1.1rem, 3vw, 1.7rem);
+  font-weight: 800;
   margin-bottom: 40px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 
-    0 0 15px rgba(255, 16, 240, 0.7),
-    0 0 30px rgba(255, 16, 240, 0.4);
+  letter-spacing: 2px;
+  text-shadow: 0 0 14px rgba(0, 245, 255, 0.5);
   position: relative;
   z-index: 1;
-  padding-bottom: 20px;
+  padding-bottom: 22px;
   text-align: center;
+  line-height: 1.5;
 }
 
 .privacy-container h1::after {
@@ -80,36 +68,34 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 140px;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    #FF10F0, 
-    #00FFFF, 
-    transparent);
-  box-shadow: 0 0 15px rgba(255, 16, 240, 0.6);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f5ff, #ff0080, transparent);
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
 }
 
 .privacy-container h3 {
-  color: #00FFFF;
-  font-size: 1.8rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #00ffa3;
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
   font-weight: 700;
-  font-family: 'Bebas Neue', sans-serif;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  margin-top: 36px;
+  margin-bottom: 14px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 255, 163, 0.35);
   position: relative;
   z-index: 1;
-  padding-left: 15px;
-  border-left: 3px solid #00FFFF;
+  padding-left: 14px;
+  border-left: 3px solid #00ffa3;
+  line-height: 1.5;
 }
 
 .privacy-container p {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  color: #a0b4d6;
+  line-height: 1.85;
   margin-bottom: 20px;
-  line-height: 1.8;
-  font-size: 1.1rem;
   font-weight: 500;
   position: relative;
   z-index: 1;
@@ -117,145 +103,105 @@
 
 .privacy-container ul {
   list-style: none;
-  margin-left: 0;
-  margin-bottom: 25px;
   padding: 0;
+  margin: 0 0 20px;
   position: relative;
   z-index: 1;
 }
 
 .privacy-container ul li {
-  margin-bottom: 12px;
-  padding-left: 32px;
+  font-size: clamp(0.88rem, 1.6vw, 0.98rem);
+  color: #a0b4d6;
+  line-height: 1.85;
+  margin-bottom: 10px;
+  padding-left: 22px;
   position: relative;
-  line-height: 1.8;
-  font-size: 1.1rem;
   font-weight: 500;
 }
 
 .privacy-container ul li::before {
-  content: '▶';
+  content: '▸';
   position: absolute;
   left: 0;
-  color: #FF10F0;
-  font-weight: bold;
+  color: #ff0080;
   font-size: 0.9rem;
-  text-shadow: 0 0 8px rgba(255, 16, 240, 0.6);
-  top: 2px;
 }
 
 .privacy-container a {
-  color: #00FFFF;
+  color: #00f5ff;
   text-decoration: none;
-  font-weight: 700;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.4);
   transition: all 0.3s ease;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-  position: relative;
-  padding: 2px 6px;
-  border-radius: 4px;
-}
-
-.privacy-container a::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 255, 255, 0.1);
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.privacy-container a:hover {
-  color: #FF10F0;
-  text-shadow: 
-    0 0 15px rgba(255, 16, 240, 0.7),
-    0 0 25px rgba(255, 16, 240, 0.5);
-}
-
-.privacy-container a:hover::before {
-  opacity: 1;
-  background: rgba(255, 16, 240, 0.15);
-  box-shadow: 0 0 20px rgba(255, 16, 240, 0.4);
-}
-
-.privacy-container button {
-  background: linear-gradient(135deg, #FF10F0 0%, #ff006e 100%);
-  color: #ffffff;
-  font-family: 'Teko', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 
-    0 0 20px rgba(255, 16, 240, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 16, 240, 0.6);
-}
-
-.privacy-container button:hover {
-  background: linear-gradient(135deg, #00FFFF 0%, #00d4ff 100%);
-  color: #0f0520;
-  box-shadow: 
-    0 0 25px rgba(0, 255, 255, 0.6),
-    0 6px 16px rgba(0, 0, 0, 0.5);
-  transform: translateY(-2px);
-  border-color: rgba(0, 255, 255, 0.8);
-}
-
-.privacy-container blockquote {
-  border-left: 3px solid rgba(255, 100, 0, 0.6);
-  padding-left: 20px;
-  margin: 25px 0;
-  font-style: italic;
-  color: #c0b0d0;
-  background: rgba(255, 100, 0, 0.08);
-  padding: 15px 15px 15px 25px;
-  border-radius: 8px;
+  padding-bottom: 1px;
   position: relative;
   z-index: 1;
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
+.privacy-container a:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
+}
+
+/* Override inline style on the Contact Us button in PrivacyPolicy.js */
+.privacy-container button {
+  background: transparent !important;
+  border: 1px solid rgba(0, 245, 255, 0.4) !important;
+  border-radius: 6px;
+  color: #00f5ff !important;
+  text-decoration: none !important;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.88rem, 1.6vw, 0.98rem);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.privacy-container button:hover {
+  background: rgba(0, 245, 255, 0.08) !important;
+  box-shadow: 0 0 14px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.privacy-container blockquote {
+  border-left: 3px solid rgba(0, 245, 255, 0.4);
+  padding: 14px 18px;
+  margin: 20px 0;
+  color: #7a90b8;
+  background: rgba(0, 245, 255, 0.04);
+  border-radius: 0 8px 8px 0;
+  font-size: clamp(0.85rem, 1.4vw, 0.95rem);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
   .privacy-container {
-    padding: 80px 60px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-
-  .privacy-container h1 {
-    font-size: 3.5rem;
-  }
-
-  .privacy-container h3 {
-    font-size: 2.2rem;
-  }
-
-  .privacy-container p {
-    font-size: 1.2rem;
-  }
-
-  .privacy-container ul li {
-    font-size: 1.2rem;
+    margin: 16px 12px;
+    padding: 30px 18px;
+    margin-bottom: 100px;
   }
 }
 
-@media (max-width: 767px) {
+/* Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
   .privacy-container {
-    margin: 20px;
-    padding: 40px 20px;
-    border-radius: 16px;
+    margin: 24px 20px;
+    padding: 40px 28px;
   }
+}
 
-  .privacy-container h1 {
-    font-size: 2.2rem;
-  }
-
-  .privacy-container h3 {
-    font-size: 1.5rem;
+/* Desktop */
+@media (min-width: 768px) {
+  .privacy-container {
+    padding: 70px 56px;
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
 }

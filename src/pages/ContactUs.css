@@ -1,76 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800&family=Rajdhani:wght@500;600;700&display=swap');
 
 .contact-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px 30px;
-  background: linear-gradient(135deg, #2d1b3d 0%, #1a0a2e 100%);
-  color: #e0d0ff;
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #0d1130 0%, #0f1535 100%);
+  color: #c7d2fe;
   min-height: calc(100vh - 200px);
-  font-family: 'Teko', sans-serif;
-  border-radius: 20px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  box-shadow: 
-    0 0 40px rgba(255, 16, 240, 0.25),
-    0 20px 60px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 16, 240, 0.3);
+  font-family: 'Rajdhani', sans-serif;
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 16px;
+  box-shadow:
+    0 0 40px rgba(0, 245, 255, 0.07),
+    0 20px 60px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
+/* Animated top border */
 .contact-container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, 
-    transparent 0%,
-    rgba(255, 16, 240, 0.8) 50%,
-    transparent 100%);
-  animation: scanline 3s linear infinite;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00f5ff, #ff0080, #00ffa3, transparent);
+  background-size: 200% 100%;
+  animation: neonScan 4s linear infinite;
 }
 
-@keyframes scanline {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
+@keyframes neonScan {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
+/* Subtle grid overlay */
 .contact-container::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(rgba(255, 16, 240, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
   pointer-events: none;
-  opacity: 0.3;
 }
 
 .contact-container h2 {
-  color: #FF10F0;
-  font-size: 2.8rem;
-  font-weight: 700;
-  font-family: 'Bebas Neue', sans-serif;
-  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f5ff;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 800;
+  margin-bottom: 32px;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 
-    0 0 15px rgba(255, 16, 240, 0.7),
-    0 0 30px rgba(255, 16, 240, 0.4);
+  letter-spacing: 2px;
+  text-shadow: 0 0 14px rgba(0, 245, 255, 0.5);
   position: relative;
   z-index: 1;
   padding-bottom: 20px;
+  line-height: 1.4;
 }
 
 .contact-container h2::after {
@@ -78,81 +66,66 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100px;
-  height: 3px;
-  background: linear-gradient(90deg, #FF10F0, #00FFFF, transparent);
-  box-shadow: 0 0 10px rgba(255, 16, 240, 0.5);
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #00f5ff, #ff0080);
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.5);
 }
 
 .contact-container p {
-  margin-bottom: 20px;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  color: #a0b4d6;
   line-height: 1.8;
-  font-size: 1.2rem;
+  margin-bottom: 20px;
   font-weight: 500;
   position: relative;
   z-index: 1;
 }
 
 .contact-container a {
-  color: #00FFFF;
+  color: #00f5ff;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 600;
+  padding: 4px 12px;
+  border: 1px solid rgba(0, 245, 255, 0.35);
+  border-radius: 6px;
+  background: rgba(0, 245, 255, 0.06);
+  display: inline-block;
   transition: all 0.3s ease;
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
   position: relative;
-  padding: 2px 8px;
-  border-radius: 4px;
-}
-
-.contact-container a::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 255, 255, 0.1);
-  border-radius: 4px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .contact-container a:hover {
-  color: #FF10F0;
-  text-shadow: 
-    0 0 15px rgba(255, 16, 240, 0.7),
-    0 0 25px rgba(255, 16, 240, 0.5);
-  transform: translateY(-1px);
+  color: #ffffff;
+  border-color: #00f5ff;
+  background: rgba(0, 245, 255, 0.12);
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
 }
 
-.contact-container a:hover::before {
-  opacity: 1;
-  background: rgba(255, 16, 240, 0.15);
-  box-shadow: 0 0 20px rgba(255, 16, 240, 0.4);
+/* Mobile */
+@media (max-width: 480px) {
+  .contact-container {
+    margin: 16px 12px;
+    padding: 30px 18px;
+    margin-bottom: 100px;
+  }
 }
 
-/* Responsive adjustments */
+/* Tablet */
+@media (min-width: 481px) and (max-width: 767px) {
+  .contact-container {
+    margin: 24px 20px;
+    padding: 40px 28px;
+  }
+}
+
+/* Desktop */
 @media (min-width: 768px) {
   .contact-container {
-    padding: 80px 60px;
+    padding: 64px 56px;
     margin-top: 60px;
     margin-bottom: 60px;
-  }
-
-  .contact-container h2 {
-    font-size: 3.5rem;
-  }
-
-  .contact-container p {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .contact-container {
-    margin: 20px;
-    padding: 40px 20px;
-    border-radius: 16px;
-  }
-
-  .contact-container h2 {
-    font-size: 2.2rem;
   }
 }

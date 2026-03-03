@@ -1,0 +1,452 @@
+.pacman-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  overflow: hidden;
+}
+
+/* Pac-Man GIF */
+.pacman-gif {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: 
+    drop-shadow(0 0 10px rgba(255, 215, 0, 0.6))
+    contrast(1.2);
+  animation: movePacman 24s linear infinite;
+  z-index: 9999;
+}
+
+/* Movement path around screen */
+@keyframes movePacman {
+  /* Start from left, moving right */
+  0% {
+    top: 30%;
+    left: -60px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  /* Move across top */
+  20% {
+    top: 30%;
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  /* Turn down */
+  22% {
+    top: 30%;
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(90deg) scaleX(1);
+  }
+  
+  /* Move down right side */
+  42% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(90deg) scaleX(1);
+  }
+  
+  /* Turn left */
+  44% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(180deg) scaleX(1);
+  }
+  
+  /* Move across bottom */
+  64% {
+    top: calc(100% - 100px);
+    left: 100px;
+    transform: translateY(-50%) rotate(180deg) scaleX(1);
+  }
+  
+  /* Turn up */
+  66% {
+    top: calc(100% - 100px);
+    left: 100px;
+    transform: translateY(-50%) rotate(270deg) scaleX(1);
+  }
+  
+  /* Move up left side */
+  86% {
+    top: 30%;
+    left: 100px;
+    transform: translateY(-50%) rotate(270deg) scaleX(1);
+  }
+  
+  /* Turn right */
+  88% {
+    top: 30%;
+    left: 100px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  /* Continue to start */
+  100% {
+    top: 30%;
+    left: -60px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+}
+
+/* Ghost GIF following - Uses same path with delay */
+.ghost-gif {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: 
+    drop-shadow(0 0 10px rgba(255, 0, 128, 0.6))
+    contrast(1.2);
+  animation: moveGhost 24s linear infinite;
+  animation-delay: 1s; /* Ghost starts 2 seconds behind in the animation */
+  z-index: 9998;
+}
+
+@keyframes moveGhost {
+  /* Ghost follows EXACT same path as Pac-Man */
+  0% {
+    top: 30%;
+    left: -60px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  20% {
+    top: 30%;
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  22% {
+    top: 30%;
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(90deg) scaleX(1);
+  }
+  
+  42% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(90deg) scaleX(1);
+  }
+  
+  44% {
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+    transform: translateY(-50%) rotate(180deg) scaleX(1);
+  }
+  
+  64% {
+    top: calc(100% - 100px);
+    left: 100px;
+    transform: translateY(-50%) rotate(180deg) scaleX(1);
+  }
+  
+  66% {
+    top: calc(100% - 100px);
+    left: 100px;
+    transform: translateY(-50%) rotate(270deg) scaleX(1);
+  }
+  
+  86% {
+    top: 30%;
+    left: 100px;
+    transform: translateY(-50%) rotate(270deg) scaleX(1);
+  }
+  
+  88% {
+    top: 30%;
+    left: 100px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+  
+  100% {
+    top: 30%;
+    left: -60px;
+    transform: translateY(-50%) rotate(0deg) scaleX(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pacman-gif {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .ghost-gif {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Adjust path for mobile screens */
+  @keyframes movePacman {
+    0% {
+      top: 25%;
+      left: -60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    20% {
+      top: 25%;
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    22% {
+      top: 25%;
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    42% {
+      top: calc(100% - 120px);
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    44% {
+      top: calc(100% - 120px);
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    64% {
+      top: calc(100% - 120px);
+      left: 60px;
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    66% {
+      top: calc(100% - 120px);
+      left: 60px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    86% {
+      top: 25%;
+      left: 60px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    88% {
+      top: 25%;
+      left: 60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    100% {
+      top: 25%;
+      left: -60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+  }
+
+  @keyframes moveGhost {
+    0% {
+      top: 25%;
+      left: -60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    20% {
+      top: 25%;
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    22% {
+      top: 25%;
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    42% {
+      top: calc(100% - 120px);
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    44% {
+      top: calc(100% - 120px);
+      left: calc(100% - 60px);
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    64% {
+      top: calc(100% - 120px);
+      left: 60px;
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    66% {
+      top: calc(100% - 120px);
+      left: 60px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    86% {
+      top: 25%;
+      left: 60px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    88% {
+      top: 25%;
+      left: 60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    100% {
+      top: 25%;
+      left: -60px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pacman-gif {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .ghost-gif {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Even tighter path for very small screens */
+  @keyframes movePacman {
+    0% {
+      top: 20%;
+      left: -50px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    20% {
+      top: 20%;
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    22% {
+      top: 20%;
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    42% {
+      top: calc(100% - 140px);
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    44% {
+      top: calc(100% - 140px);
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    64% {
+      top: calc(100% - 140px);
+      left: 40px;
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    66% {
+      top: calc(100% - 140px);
+      left: 40px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    86% {
+      top: 20%;
+      left: 40px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    88% {
+      top: 20%;
+      left: 40px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    100% {
+      top: 20%;
+      left: -50px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+  }
+
+  @keyframes moveGhost {
+    0% {
+      top: 20%;
+      left: -50px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    20% {
+      top: 20%;
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    22% {
+      top: 20%;
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    42% {
+      top: calc(100% - 140px);
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(90deg) scaleX(1);
+    }
+    
+    44% {
+      top: calc(100% - 140px);
+      left: calc(100% - 40px);
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    64% {
+      top: calc(100% - 140px);
+      left: 40px;
+      transform: translateY(-50%) rotate(180deg) scaleX(1);
+    }
+    
+    66% {
+      top: calc(100% - 140px);
+      left: 40px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    86% {
+      top: 20%;
+      left: 40px;
+      transform: translateY(-50%) rotate(270deg) scaleX(1);
+    }
+    
+    88% {
+      top: 20%;
+      left: 40px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+    
+    100% {
+      top: 20%;
+      left: -50px;
+      transform: translateY(-50%) rotate(0deg) scaleX(1);
+    }
+  }
+}

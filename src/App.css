@@ -1,19 +1,55 @@
-/* Vice City App.css */
+/* App.css — Cyberpunk Theme */
 html, body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
-  background: linear-gradient(180deg, #1a0a2e 0%, #0f0520 100%);
+  background: #070b1a;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: linear-gradient(180deg, #1a0a2e 0%, #0f0520 100%);
+  background: #070b1a;
 }
 
 .content {
   flex: 1;
   padding: 16px;
+  background: #070b1a;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+/* Subtle scanline overlay across entire app */
+.content::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 245, 255, 0.015) 0px,
+    rgba(0, 245, 255, 0.015) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 8px;
+    margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .content {
+    padding: 12px;
+    margin-bottom: 75px;
+  }
 }

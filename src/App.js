@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import ContactUs from './pages/ContactUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Home from './pages/Home';
-import Podcast from './pages/Podcast'; // Add this import
+import Podcast from './pages/Podcast';
 import './App.css';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/contact-us" element={<ContactUs />} />
             <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route exact path="/podcast" element={<Podcast />} />
+            <Route exact path="/invertedcontrolfreak" element={<Podcast />} />
           </Routes>
         </div>
         <Footer />

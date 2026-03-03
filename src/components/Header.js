@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import logo from '../assets/icon.png'; // Adjust this path to your logo image
-import googlePlayBadge from '../assets/google-play-badge.png'; // Path to your Google Play badge
+import logo from '../assets/icon.png';
+import googlePlayBadge from '../assets/google-play-badge.png'; 
 
 const Header = () => {
   return (

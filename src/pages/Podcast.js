@@ -7,7 +7,7 @@ import icflogo from '../assets/icflogo.png';
 // Replace with your actual YouTube Channel ID.
 // Find it: YouTube Studio → Customization → Basic Info → scroll to bottom
 const CHANNEL_ID = 'UCgY11M2hCN53Dng3qXlRhqw';
-const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+const RSS_URL = `https://youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
 // ──────────────────────────────────────────────────────────
 

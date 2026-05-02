@@ -6,6 +6,7 @@ import ContactUs from './pages/ContactUs';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Home from './pages/Home';
 import Podcast from './pages/Podcast';
+import Portfolio from './pages/Portfolio';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route exact path="/contact-us" element={<ContactUs />} />
             <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route exact path="/invertedcontrolfreak" element={<Podcast />} />
+            <Route exact path="/portfolio" element={<Portfolio />} />
           </Routes>
         </div>
         <Footer />

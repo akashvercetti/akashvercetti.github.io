@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './ContactUs.css';
 
 const ContactUs = () => {
-  useEffect(() => {
-    console.log('contact us')
-  });
-
   return (
     <div className="contact-container">
       <h2>Contact Us</h2>
-      <p>For any feature requests or feedback, email at: <a href="mailto:carljohnson.akash@gmail.com">carljohnson.akash@gmail.com</a></p>
+      <p>
+        Got a bug to report, a feature you'd like to see, or just want to say hi?
+        We'd love to hear from you.
+      </p>
+      <p>
+        Email us at:{' '}
+        <a href="mailto:carljohnson.akash@gmail.com">carljohnson.akash@gmail.com</a>
+      </p>
+      <p>
+        We read every message and reply to most of them. Feature requests are always welcome —
+        Pulstral is actively developed and your feedback shapes what gets built next.
+      </p>
     </div>
   );
 };

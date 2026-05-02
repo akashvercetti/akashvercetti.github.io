@@ -1,104 +1,173 @@
 import React from 'react';
-import './Privacy.css'; // Optional for styling
+import './Privacy.css';
 import { useNavigate } from 'react-router-dom';
 
 const Privacy = () => {
   const navigate = useNavigate();
 
   const handleContactClick = () => {
-    navigate('/contact-us'); // replace '/contact' with your actual Contact Us route
+    navigate('/contact-us');
   };
 
   return (
     <div className="privacy-container">
-      <h1>Privacy Policy for GameShortsXP</h1>
+      <h1>Privacy Policy for Pulstral</h1>
+      <p><em>Last updated: April 2026</em></p>
 
       <h3>Introduction</h3>
       <p>
-        Welcome to GameShortsXP.
-        This Privacy Policy explains how GameShortsXP collect, use, and safeguard your information when
-        you use our mobile application (the "App") and any related services.
-        By using the App, you consent to the collection and use of information as outlined in this policy.
+        Pulstral is built on a simple principle: no logins, no subscriptions, no selling
+        your data. You don't create an account to use this app. This policy explains the
+        limited technical data that is collected, why it's collected, and who else may
+        process data as part of delivering the app's features (including ads).
       </p>
 
-      <h3>1. Information GameShortsXP Collect</h3>
-      <p>GameShortsXP do not collect personal data such as names, emails, or contact details. The App operates
-        without requiring users to log in or provide any personal identifying information.</p>
-      
-      <h3>Automatically Collected Information</h3>
-      <p>When you use the App, GameShortsXP may collect non-personal information automatically, such as:</p>
+      <h3>1. No accounts. Minimal data.</h3>
+      <p>
+        Pulstral requires no sign-up, no email address, and no password. We do not collect
+        your name, location, or contact information. The limited technical data described
+        below is collected only to make specific app features work, and is never sold or
+        used to build a profile about you.
+      </p>
+
+      <h3>2. Anonymous device identifier</h3>
+      <p>
+        On first launch, the app generates a random anonymous identifier (a UUID) and stores
+        it locally on your device. To enable push notifications and personalised content
+        delivery, this identifier is sent to our servers along with your Firebase push
+        notification token and your selected notification topics. It is not linked to your
+        name, email, or any personal account. Clearing the app's data resets it entirely.
+      </p>
+
+      <h3>3. Optional Steam profile</h3>
+      <p>
+        You may optionally enter your Steam ID to unlock personalised sections such as
+        recently played games, achievements, and library stats. If you do:
+      </p>
       <ul>
-        <li>Device type, OS version, and device identifiers (for app functionality and optimization purposes)</li>
-        <li>App usage data (e.g., session duration or frequency of use) for internal analytics</li>
+        <li>Only your public Steam profile data is fetched — the same data anyone can see on your Steam page</li>
+        <li>Your Steam ID is stored locally on your device and on our servers, tied only to your anonymous device identifier — not to any personal identity</li>
+        <li>You can remove it at any time from within the app</li>
       </ul>
 
-      <h3>2. Content Attribution and Usage</h3>
+      <h3>4. Optional HoYoverse profile</h3>
       <p>
-        Our App uses publicly available RSS feeds from gaming websites to curate and summarize gaming news articles.
-        Each article summary includes attribution to the original source, and users have options to:
+        You may optionally enter a HoYoverse game UID (for Genshin Impact, Honkai: Star Rail,
+        or Zenless Zone Zero) to view your in-game showcase. If you do:
       </p>
       <ul>
-        <li>Open the full article in a browser via an "Open in Browser" button</li>
-        <li>Share the original article link with others using the "Share" button</li>
+        <li>Your UID and selected game name are sent to our servers, which retrieve your public showcase data from HoYoverse's API on your behalf</li>
+        <li>Only publicly visible showcase data is retrieved — the same data visible on your in-game profile</li>
+        <li>Your UID is stored locally on your device for convenience and is not linked to any personal identity</li>
+        <li>You can clear it at any time from within the app</li>
       </ul>
-      <p>GameShortsXP do not claim ownership of the content sourced from these public RSS feeds. All content is summarized to provide quick and concise news updates.</p>
 
-      <h3>3. Ad Networks and Data Collection</h3>
+      <h3>5. Price watchlist and notifications</h3>
       <p>
-        Our App displays ads from third-party ad providers such as AdMob and Meta Audience Network.
-        These services may collect and use anonymous information about your device and activity within
-        the App to serve relevant ads. No personally identifiable information is shared with these ad providers.
+        If you add games to your price watchlist, the game titles and your optional target
+        prices are stored on our servers associated with your anonymous device identifier.
+        This is used only to send you price drop alerts via push notification. You can
+        disable notifications at any time through your device's notification settings,
+        and remove watchlist items from within the app.
       </p>
-
-      <h3>Third-party Advertising Networks:</h3>
+      <p>
+        Other optional notification features also store preferences on our servers:
+      </p>
       <ul>
-        <li><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">AdMob: Google AdMob Policy</a></li>
-        <li><a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener noreferrer">Meta Audience Network: Meta Audience Network Policy</a></li>
+        <li><strong>Free games notifications</strong> — if enabled, your device identifier is stored to send you alerts when games go free</li>
+        <li><strong>Esports notifications</strong> — if enabled, your selected games (e.g. CS2, Valorant) are stored against your device identifier to send match alerts</li>
+        <li><strong>In-game event notifications</strong> — if enabled for a HoYoverse game, your preference is stored to send reminders about ending events</li>
+        <li><strong>Redemption code notifications</strong> — if enabled for a game, your preference is stored to alert you when new codes are available</li>
       </ul>
       <p>
-        These providers may use cookies, web beacons, or other technologies to collect information for
-        advertising purposes. You can opt out of personalized advertising through your device's settings.
+        All notification preferences can be changed or disabled at any time from within the app or through your device's notification settings.
       </p>
 
-      <h3>4. How GameShortsXP Use Collected Information</h3>
-      <p>GameShortsXP may use non-personal information for the following purposes:</p>
+      <h3>5a. Game backlog</h3>
+      <p>
+        If you use the backlog feature, the game titles, platforms, and statuses you add are
+        stored on our servers associated with your anonymous device identifier. This data is
+        used solely to sync your backlog across app sessions. You can delete individual entries
+        or clear your backlog entirely from within the app.
+      </p>
+
+      <h3>6. Advertising and consent</h3>
+      <p>
+        Pulstral is free and supported by ads. The app uses the following ad networks, which
+        may collect and process device-level data to serve relevant advertisements:
+      </p>
       <ul>
-        <li>To operate and improve the App’s features and functionality</li>
-        <li>To display relevant advertisements within the App</li>
+        <li>
+          <strong>AdMob (Google)</strong> — may use your device's advertising identifier to
+          serve personalised ads.{' '}
+          <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google AdMob Policy</a>
+        </li>
+        <li>
+          <strong>Meta Audience Network</strong> — may use your device's advertising identifier
+          to serve personalised ads.{' '}
+          <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener noreferrer">Meta Audience Network Policy</a>
+        </li>
       </ul>
-      <p>GameShortsXP do not sell or share any personal data as GameShortsXP do not collect such information.</p>
-
-      <h3>5. Content Disclaimer</h3>
       <p>
-        Our App uses publicly available sources, such as RSS feeds, to provide brief summaries of gaming news articles.
-        GameShortsXP ensure proper attribution to the original sources in every article and provide links to the full content on
-        the original websites. Our content is transformative in nature, summarizing the key points of news articles.
+        <strong>EU/EEA users:</strong> On first launch, you will be shown a consent form
+        (powered by Google's User Messaging Platform) asking whether you agree to personalised
+        ads. If you decline, non-personalised ads will be shown instead. You can review or
+        change your choice at any time in the app's Settings screen.
+      </p>
+      <p>
+        All users can also limit ad personalisation at any time through their device's
+        settings (Settings → Privacy → Ads on Android).
       </p>
 
-      <h3>6. Use of Lottie Files</h3>
+      <h3>7. Other third-party services</h3>
       <p>
-        Our App uses animation files provided by LottieFiles, which are distributed under the <strong>Lottie Simple License</strong>.
-        You can review the license details <a href="https://lottiefiles.com/page/license" target="_blank" rel="noopener noreferrer">here</a>.
+        The app uses Firebase (Google) for push notification delivery. Firebase processes
+        your device's push token to deliver notifications you have opted into.{' '}
+        <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Policy</a>
       </p>
-      <blockquote>
-        "Lottie Simple License (FL 9.13.21)...
-      </blockquote>
 
-      <h3>7. External Links</h3>
-      <p>The App includes external links to the original news articles. GameShortsXP are not responsible for the privacy practices or the content of these external websites.</p>
-
-      <h3>8. Changes to This Privacy Policy</h3>
-      <p>GameShortsXP may update this Privacy Policy from time to time. Any changes will be posted here with an updated revision date.</p>
-
-      <h3>9. Contact Us</h3>
+      <h3>8. Gaming content and data sources</h3>
       <p>
-        If you have any questions or concerns about this Privacy Policy or the use of your information, please contact us:
+        The app displays publicly available gaming data sourced from Steam, CheapShark,
+        IGDB, Epic Games, and Microsoft. No personal information is sent to any of these
+        services on your behalf.
       </p>
+      <p>
+        Gaming news is sourced from public RSS feeds. Every article links back to the
+        original source — we summarise, we don't claim ownership.
+      </p>
+
+      <h3>9. Use of Lottie files</h3>
+      <p>
+        The app uses animation files from LottieFiles under the{' '}
+        <a href="https://lottiefiles.com/page/license" target="_blank" rel="noopener noreferrer">Lottie Simple License</a>.
+      </p>
+
+      <h3>10. External links</h3>
+      <p>
+        The app links to external websites including news articles, game store pages, and
+        deal URLs. Pulstral is not responsible for the privacy practices of those sites.
+      </p>
+
+      <h3>11. Changes to this policy</h3>
+      <p>
+        If this policy changes, the updated version will be posted here with a revised date
+        at the top. The fundamental principle will not change: no accounts, no selling your
+        data.
+      </p>
+
+      <h3>12. Contact us</h3>
+      <p>Questions or concerns? Reach us at:</p>
       <ul>
         <li>Email: carljohnson.akash@gmail.com</li>
-        <li><button onClick={handleContactClick} style={{ background: 'none', border: 'none', color: 'blue', textDecoration: 'underline', cursor: 'pointer' }}>
-              Contact Us Page
-            </button></li>
+        <li>
+          <button
+            onClick={handleContactClick}
+            className="privacy-contact-link"
+          >
+            Contact us page
+          </button>
+        </li>
       </ul>
     </div>
   );

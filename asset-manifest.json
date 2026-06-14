@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2ea5bf60.css",
-    "main.js": "/static/js/main.a46fa663.js",
+    "main.css": "/static/css/main.f787afff.css",
+    "main.js": "/static/js/main.4817b0b1.js",
     "static/js/453.f1ea2376.chunk.js": "/static/js/453.f1ea2376.chunk.js",
     "static/media/screenshot2.jpg": "/static/media/screenshot2.2dca98a4496134e1afda.jpg",
     "static/media/screenshot3.jpg": "/static/media/screenshot3.0b4a544698b359ed22ca.jpg",
@@ -13,14 +13,15 @@
     "static/media/screenshot5.jpg": "/static/media/screenshot5.9db009406e1513371df9.jpg",
     "static/media/icflogo.png": "/static/media/icflogo.46327be6b08a67a160e1.png",
     "static/media/cfyoutube.png": "/static/media/cfyoutube.d87a9c6a1d1105940582.png",
+    "static/media/tees-logo.jpg": "/static/media/tees-logo.dd899bf6f5ccc26f6050.jpg",
     "static/media/icon.png": "/static/media/icon.1b61dea388405c8a32ec.png",
     "index.html": "/index.html",
-    "main.2ea5bf60.css.map": "/static/css/main.2ea5bf60.css.map",
-    "main.a46fa663.js.map": "/static/js/main.a46fa663.js.map",
+    "main.f787afff.css.map": "/static/css/main.f787afff.css.map",
+    "main.4817b0b1.js.map": "/static/js/main.4817b0b1.js.map",
     "453.f1ea2376.chunk.js.map": "/static/js/453.f1ea2376.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2ea5bf60.css",
-    "static/js/main.a46fa663.js"
+    "static/css/main.f787afff.css",
+    "static/js/main.4817b0b1.js"
   ]
 }

@@ -46,7 +46,7 @@
   pointer-events: none;
 }
 
-.contact-container h2 {
+.contact-container h1 {
   font-family: 'Orbitron', sans-serif;
   color: #00f5ff;
   font-size: clamp(1.2rem, 3vw, 1.8rem);
@@ -61,7 +61,7 @@
   line-height: 1.4;
 }
 
-.contact-container h2::after {
+.contact-container h1::after {
   content: '';
   position: absolute;
   bottom: 0;

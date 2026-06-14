@@ -1,4 +1,5 @@
 import React from 'react';
+import usePageMeta from '../usePageMeta';
 import './Home.css';
 import screenshot1 from '../assets/screenshot1.jpg';
 import screenshot2 from '../assets/screenshot2.jpg';
@@ -10,6 +11,11 @@ import screenshot7 from '../assets/screenshot7.jpg';
 import screenshot8 from '../assets/screenshot8.jpg';
 
 const Home = () => {
+  usePageMeta(
+    'Pulstral - Your Gaming Life, One Place',
+    'Pulstral is your all-in-one gaming companion. Deals, free games, Steam stats, esports scores, news, trailers, and more — all in one free app.'
+  );
+
   return (
     <div className="home-container">
       {/* Hero Section with Screenshots */}

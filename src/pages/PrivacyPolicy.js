@@ -1,8 +1,14 @@
 import React from 'react';
+import usePageMeta from '../usePageMeta';
 import './Privacy.css';
 import { useNavigate } from 'react-router-dom';
 
 const Privacy = () => {
+  usePageMeta(
+    'Privacy Policy - Pulstral',
+    'How Pulstral handles your data: no logins, no subscriptions, no selling your data.'
+  );
+
   const navigate = useNavigate();
 
   const handleContactClick = () => {

@@ -16,10 +16,25 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "reactSnap": {
+    "include": [
+      "/",
+      "/portfolio",
+      "/tees",
+      "/invertedcontrolfreak",
+      "/contact-us",
+      "/privacy-policy"
+    ],
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -40,6 +55,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.2.0"
+    "gh-pages": "^6.2.0",
+    "react-snap": "^1.23.0"
   }
 }

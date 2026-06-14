@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import usePageMeta from '../usePageMeta';
 import './Portfolio.css';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -125,18 +126,44 @@ const Counter = ({ value, suffix }) => {
 
 // ─── Main Component ────────────────────────────────────────────────────────────
 const Portfolio = () => {
+  usePageMeta(
+    'Akash Malhotra - iOS Engineer & Engineering Manager',
+    'Portfolio of Akash Malhotra: 15+ years of iOS development, engineering leadership, and SDKs used across 1000+ apps.'
+  );
+
+  // Person structured data so search engines tie this page to Akash Malhotra
+  // (name searches, knowledge panel). Built from data already on the page.
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Akash Malhotra',
+    jobTitle: 'Senior iOS Engineer & Engineering Manager',
+    url: 'https://akashvercetti.github.io/portfolio',
+    email: 'akash24888@gmail.com',
+    worksFor: { '@type': 'Organization', name: 'CleverTap' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Mumbai University' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressCountry: 'India' },
+    knowsAbout: [...SKILLS_TECH, ...SKILLS_LEAD],
+    sameAs: [
+      'https://www.linkedin.com/in/akash-malhotra-9b492671',
+      'https://github.com/akashvercetti',
+    ],
+  };
 
 useEffect(() => {
   document.body.classList.add('pf-page-active');
-  document.title = 'Akash Malhotra — iOS Engineer & Engineering Manager';
   return () => {
     document.body.classList.remove('pf-page-active');
-    document.title = 'Pulstral - Your Gaming Life, One Place';
   };
 }, []);
   
   return (
     <div className="pf-page">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
 
       {/*
         AI / scraper context paragraph:

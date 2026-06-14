@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
 import './Podcast.css';
 import cfyoutube from '../assets/cfyoutube.png';
 import icflogo from '../assets/icflogo.png';
@@ -92,6 +93,25 @@ const VideoSkeleton = ({ label }) => (
 
 // ─── Main Component ───────────────────────────────────────
 const InvertedControlFreak = () => {
+  usePageMeta(
+    'InvertedControlFreak - Gaming YouTube Channel | Reviews & Indie Games',
+    'InvertedControlFreak is a gaming YouTube channel by a gamer dad - honest game reviews, indie gems, sale picks, news reactions, and gaming sessions with friends.',
+    cfyoutube
+  );
+
+  // Organization structured data so search engines tie this page to the
+  // InvertedControlFreak YouTube channel (brand-name searches).
+  const channelSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'InvertedControlFreak',
+    alternateName: 'Inverted Control Freak',
+    description: 'Gaming YouTube channel by a gamer dad - honest game reviews, indie games, sale picks, news reactions, and gaming sessions.',
+    url: 'https://akashvercetti.github.io/invertedcontrolfreak',
+    logo: `${SITE_ORIGIN}${cfyoutube}`,
+    sameAs: ['https://www.youtube.com/@InvertedControlFreak'],
+  };
+
   const [videos, setVideos]   = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState(null);
@@ -114,6 +134,11 @@ const InvertedControlFreak = () => {
 
   return (
     <div className="icc-container">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(channelSchema) }}
+      />
 
       {/* Channel Banner */}
       <div className="icc-banner-wrapper">

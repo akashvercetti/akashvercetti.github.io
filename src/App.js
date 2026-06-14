@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ContactUs from './pages/ContactUs';
@@ -7,6 +7,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import Home from './pages/Home';
 import Podcast from './pages/Podcast';
 import Portfolio from './pages/Portfolio';
+import Tees from './pages/Tees';
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route exact path="/invertedcontrolfreak" element={<Podcast />} />
             <Route exact path="/portfolio" element={<Portfolio />} />
+            <Route exact path="/tees" element={<Tees />} />
           </Routes>
         </div>
         <Footer />

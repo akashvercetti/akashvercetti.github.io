@@ -13,8 +13,8 @@
     <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:title" content="Pulstral - Your Gaming Life, One Place" />
     <meta property="og:description" content="Deals, free games, Steam stats, esports scores, gaming news, and more — all in one free app. No account required." />
-    <meta property="og:image" content="https://akashvercetti.github.io/Pulstral/static/media/icon.b4222aeb0d808d6800e1.png" />
-    <meta property="og:url" content="https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp" />
+    <meta property="og:image" content="https://akashvercetti.github.io/logo512.png" />
+    <meta property="og:url" content="https://akashvercetti.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Pulstral" />
 
@@ -22,12 +22,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Pulstral - Your Gaming Life, One Place" />
     <meta name="twitter:description" content="Deals, free games, Steam stats, esports scores, gaming news, and more — all in one free app." />
-    <meta name="twitter:image" content="https://akashvercetti.github.io/Pulstral/static/media/icon.b4222aeb0d808d6800e1.png" />
-    <meta name="twitter:url" content="https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp" />
+    <meta name="twitter:image" content="https://akashvercetti.github.io/logo512.png" />
+    <meta name="twitter:url" content="https://akashvercetti.github.io/" />
 
-    <!-- Link to Play Store -->
-    <link rel="canonical" href="https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp" />
-    <link rel="alternate" href="https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp" />
+    <!-- Canonical URL (this site) -->
+    <link rel="canonical" href="https://akashvercetti.github.io/" />
 
     <!-- Apple Meta Tags -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
@@ -40,6 +39,17 @@
 
     <!-- Title -->
     <title>Pulstral - Your Gaming Life, One Place</title>
+
+    <!-- SPA redirect: restores the deep-link path stashed by 404.html -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

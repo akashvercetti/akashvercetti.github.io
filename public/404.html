@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pulstral</title>
+    <script>
+      // GitHub Pages has no server-side routing. Stash the requested path so
+      // index.html can restore it once the SPA boots, then redirect to root.
+      sessionStorage.redirect = location.href;
+      location.replace('/');
+    </script>
+  </head>
+  <body></body>
+</html>

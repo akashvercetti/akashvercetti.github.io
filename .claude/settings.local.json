@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "WebFetch(domain:www.franklywearing.com)",
+      "Bash(curl -sL --max-time 25 \"https://www.franklywearing.com/d/t-shirt-funny-rgb-pc-gaming-tee-gamer-1095814\")"
+    ]
+  }
+}

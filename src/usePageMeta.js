@@ -21,9 +21,12 @@ const usePageMeta = (title, description, image) => {
   useEffect(() => {
     document.title = title;
 
-    // Normalize trailing slash so URLs match the sitemap (e.g. /tees, not
-    // /tees/), keeping "/" for the home page.
-    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    // GitHub Pages serves directory-style URLs with a trailing slash and
+    // 301-redirects the no-slash form (e.g. /tees -> /tees/). Match that here so
+    // canonical, og:url, and the sitemap all point at the URL that actually
+    // returns 200, instead of a redirecting one. Root stays as "/".
+    const rawPath = window.location.pathname.replace(/\/+$/, '');
+    const path = rawPath === '' ? '/' : `${rawPath}/`;
     const url = SITE_ORIGIN + path;
 
     upsertMeta('name', 'description', description);

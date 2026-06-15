@@ -70,6 +70,17 @@ const Tees = () => {
           </a>
         ))}
       </div>
+
+      <section className="tees-footer-cta">
+        <a
+          className="tees-creator-link"
+          href="https://www.franklywearing.com/creator/akashmalhotra"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View all my designs on Frankly Wearing →
+        </a>
+      </section>
     </div>
   );
 };

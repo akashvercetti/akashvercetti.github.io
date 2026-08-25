@@ -18,7 +18,7 @@ const Privacy = () => {
   return (
     <div className="privacy-container">
       <h1>Privacy Policy for Pulstral</h1>
-      <p><em>Last updated: April 2026</em></p>
+      <p><em>Last updated: August 2026</em></p>
 
       <h3>Introduction</h3>
       <p>
@@ -45,14 +45,15 @@ const Privacy = () => {
         name, email, or any personal account. Clearing the app's data resets it entirely.
       </p>
 
-      <h3>3. Optional Steam profile</h3>
+      <h3>3. Optional gaming profiles (Steam, PlayStation, Xbox, RetroAchievements)</h3>
       <p>
-        You may optionally enter your Steam ID to unlock personalised sections such as
-        recently played games, achievements, and library stats. If you do:
+        You may optionally link a Steam ID, PlayStation Network username, Xbox gamertag, or
+        RetroAchievements username to unlock personalised sections such as recently played
+        games, achievements, trophies, and library stats. For each:
       </p>
       <ul>
-        <li>Only your public Steam profile data is fetched — the same data anyone can see on your Steam page</li>
-        <li>Your Steam ID is stored locally on your device and on our servers, tied only to your anonymous device identifier — not to any personal identity</li>
+        <li>Only your public profile data is fetched — the same data anyone can see on your public profile on that platform. You never log into the platform through Pulstral; you only provide a public username, which our server resolves using its own credentials</li>
+        <li>Your platform ID or username is stored locally on your device and on our servers, tied only to your anonymous device identifier — not to any personal identity</li>
         <li>You can remove it at any time from within the app</li>
       </ul>
 
@@ -134,9 +135,9 @@ const Privacy = () => {
 
       <h3>8. Gaming content and data sources</h3>
       <p>
-        The app displays publicly available gaming data sourced from Steam, CheapShark,
-        IGDB, Epic Games, and Microsoft. No personal information is sent to any of these
-        services on your behalf.
+        The app displays publicly available gaming data sourced from Steam, PlayStation
+        Network, Xbox, RetroAchievements, CheapShark, IGDB, Epic Games, and Microsoft. No
+        personal information is sent to any of these services on your behalf.
       </p>
       <p>
         Gaming news is sourced from public RSS feeds. Every article links back to the
@@ -162,8 +163,8 @@ const Privacy = () => {
         data.
       </p>
 
-      <h3>12. Contact us</h3>
-      <p>Questions or concerns? Reach us at:</p>
+      <h3>12. Contact me</h3>
+      <p>Questions or concerns? Reach me at:</p>
       <ul>
         <li>Email: carljohnson.akash@gmail.com</li>
         <li>
@@ -171,7 +172,7 @@ const Privacy = () => {
             onClick={handleContactClick}
             className="privacy-contact-link"
           >
-            Contact us page
+            Contact me page
           </button>
         </li>
       </ul>

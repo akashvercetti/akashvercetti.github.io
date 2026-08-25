@@ -4,7 +4,28 @@
       "Bash(npm run *)",
       "Bash(npm install *)",
       "WebFetch(domain:www.franklywearing.com)",
-      "Bash(curl -sL --max-time 25 \"https://www.franklywearing.com/d/t-shirt-funny-rgb-pc-gaming-tee-gamer-1095814\")"
+      "Bash(curl -sL --max-time 25 \"https://www.franklywearing.com/d/t-shirt-funny-rgb-pc-gaming-tee-gamer-1095814\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://akashvercetti.github.io/)",
+      "Bash(curl -s https://akashvercetti.github.io/tees/ -o /tmp/live_tees.html -w \"HTTP %{http_code}\\\\n\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s \"https://akashvercetti.github.io/?cb=$\\(date +%s\\)\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/?cb=$\\(date +%s%N\\)\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/?cb=$\\(date +%s\\)\" -o /tmp/live_home.html -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(curl -sI \"https://akashvercetti.github.io/sitemap.xml\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/sitemap.xml\")",
+      "Bash(xmllint --noout -)",
+      "Bash(curl -s -A \"Googlebot\" \"https://www.franklywearing.com/robots.txt\")",
+      "Bash(curl -s -o /tmp/fw.html -A \"Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)\" -w \"HTTP %{http_code} | type:%{content_type} | size:%{size_download}\\\\n\" \"https://www.franklywearing.com/creator/akashmalhotra/\")",
+      "Bash(grep -iA3 -E 'User-agent: \\\\*|Googlebot|Sitemap')",
+      "Read(//private/tmp/**)",
+      "Bash(curl -sI -A \"Googlebot\" \"https://www.franklywearing.com/creator/akashmalhotra/\")",
+      "Bash(curl -sI \"https://akashvercetti.github.io/tees\")",
+      "Bash(curl -sI \"https://akashvercetti.github.io/tees/\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/tees/\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/sitemap.xml?cb=$\\(date +%s\\)\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/sitemap.xml?cb=$\\(date +%s%N\\)\")",
+      "Bash(curl -s \"https://akashvercetti.github.io/tees/?cb=$\\(date +%s%N\\)\" -o /tmp/lt.html)",
+      "Bash(curl -s \"https://akashvercetti.github.io/tees/?cb=$\\(date +%s%N\\)\")"
     ]
   }
 }

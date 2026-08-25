@@ -13,7 +13,7 @@ import screenshot8 from '../assets/screenshot8.jpg';
 const Home = () => {
   usePageMeta(
     'Pulstral - Your Gaming Life, One Place',
-    'Pulstral is your all-in-one gaming companion. Deals, free games, Steam stats, esports scores, news, trailers, and more — all in one free app.'
+    'Pulstral is your all-in-one gaming companion. Track trophies and achievements across PlayStation, Xbox, Steam and RetroAchievements, plus game deals, free games, esports, news and trailers - all in one free app.'
   );
 
   return (
@@ -36,7 +36,7 @@ const Home = () => {
       {/* App Description Section */}
       <section className="description-section">
   <h2>
-    News, deals, free games, Steam stats, esports, and more - all in one free app.
+    Trophies, achievements, game deals, free games, news, esports, and more - all in one free app.
   </h2>
   <h3>
     Pulstral is your all-in-one gaming companion. No account needed, no subscriptions,
@@ -56,22 +56,71 @@ const Home = () => {
   <p>
     Browse today's top PC game deals across Steam, GOG, Humble Store, Fanatical, and more.
     Add games to your watchlist, set a target price, and get a push notification the moment
-    a game hits your price. Tap any game to see its full price history chart.
+    a game hits your price. Tap any game to see its full price history chart. Plus browse
+    Store Coupons - the latest working discount codes across stores.
   </p>
 
-  <h3>Steam integration</h3>
+  <h3>Connect your platforms</h3>
   <p>
-    Link your Steam profile to unlock a full suite of personalised stats and tools - all from
-    your public Steam data, no password needed.
+    Link Steam, PlayStation, Xbox, and RetroAchievements to unlock a full suite of personalised
+    stats and tools. You only ever provide a public username - no passwords, no logins - and
+    Pulstral fetches the same public data anyone can see on your profile.
   </p>
   <ul>
-    <li>Play Next - smart recommendations based on your backlog, playtime, and completion progress</li>
-    <li>Achievement Hunter - track progress across every game in your library</li>
-    <li>Achievement Timeline - a chronological record of every unlock</li>
-    <li>Trophy Case - showcase your 6 rarest achievements and share them</li>
-    <li>Library Stats - total hours, completion rates, achievements unlocked, and more</li>
-    <li>Wrapped - weekly and lifetime stats cards you can share with friends</li>
+    <li>Achievement Hunter - search, filter by rarity, and sort achievements and trophies across every platform</li>
+    <li>Achievement and Trophy Timeline - a chronological record of everything you've unlocked</li>
+    <li>Progress tracker - completion percentage across your whole library at a glance</li>
+    <li>Library Stats - hours played, completion rates, genre breakdown, and most played games</li>
+    <li>On This Day and Recent Wins - your latest unlocks and what you earned on this date in past years</li>
   </ul>
+
+  <h3>PlayStation trophies</h3>
+  <ul>
+    <li>Dashboard with trophy tier counts and avatar</li>
+    <li>Road to Platinum - incomplete platinums with live progress</li>
+    <li>Rarest Trophies and the Ultra Rare Wall</li>
+    <li>Trophy Case - showcase your 6 best trophies and share them as a card</li>
+    <li>PSN Wrapped - weekly and lifetime stats cards you can share with friends</li>
+  </ul>
+
+  <h3>Xbox achievements</h3>
+  <ul>
+    <li>Gamerscore dashboard and recent unlocks</li>
+    <li>Achievement Hunter, Timeline, and Progress tracker</li>
+    <li>Completion predictions for how close you are to 100%</li>
+  </ul>
+
+  <h3>RetroAchievements</h3>
+  <ul>
+    <li>Dashboard with true points, mastered games, and streak</li>
+    <li>Achievement Hunter and Timeline</li>
+    <li>Game mastery progress and library stats</li>
+  </ul>
+
+  <h3>Pulstral Score</h3>
+  <p>
+    Your personal achievement skill rating, calculated from the rarity of your unlocks across
+    every linked platform. The rarer the unlock, the more it's worth. Climb 15 rank tiers, from
+    Wanderer to Transcendent, and show off your rarest Crown Jewel achievements.
+  </p>
+
+  <h3>Combined Gaming</h3>
+  <p>
+    One profile that merges your stats from every linked platform, with your total Pulstral
+    Score and a per-platform breakdown.
+  </p>
+
+  <h3>Now Playing card</h3>
+  <p>
+    Share what you're playing with a custom card - 8 themes, platform badges, and save to
+    gallery or share anywhere.
+  </p>
+
+  <h3>Can I Run It</h3>
+  <p>
+    Enter your PC specs and instantly check whether a game will run - GPU, CPU, RAM, VRAM, and
+    storage - with upscaling (DLSS/FSR/XeSS) and bottleneck detection.
+  </p>
 
   <h3>Gaming news</h3>
   <p>
@@ -97,7 +146,7 @@ const Home = () => {
   <p>
     Keep track of games you want to play, are currently playing, and have completed. Search the
     IGDB database to add any game. Your backlog syncs with your Steam library automatically
-    when connected.
+    when connected, and Finish It surfaces games you started but never finished.
   </p>
 
   <h3>Free-to-play redemption codes</h3>
@@ -118,10 +167,12 @@ const Home = () => {
     you're never caught off guard by a launch or showcase.
   </p>
 
-  <h3>Xbox Game Pass tracker</h3>
+  <h3>PS Plus and Game Pass</h3>
   <p>
-    Search any title to check availability across Game Pass Core, PC Game Pass, and Ultimate.
-    Browse new additions and see which games support cloud gaming.
+    Search the PlayStation Plus catalog by tier - Essential, Extra, and Premium - with
+    Time-To-Beat estimates and PS5 Pro Enhanced badges. On Xbox Game Pass, search any title to
+    check availability across Game Pass Core, PC Game Pass, and Ultimate, browse new additions,
+    and see which games support cloud gaming.
   </p>
 
   <h3>More features</h3>

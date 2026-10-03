@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/static/css/main.53ef20f6.css",
-    "main.js": "/static/js/main.15a54817.js",
+    "main.css": "/static/css/main.f6e53c35.css",
+    "main.js": "/static/js/main.303a662d.js",
     "static/js/453.f1ea2376.chunk.js": "/static/js/453.f1ea2376.chunk.js",
-    "static/media/screenshot2.jpg": "/static/media/screenshot2.2dca98a4496134e1afda.jpg",
-    "static/media/screenshot3.jpg": "/static/media/screenshot3.0b4a544698b359ed22ca.jpg",
-    "static/media/screenshot1.jpg": "/static/media/screenshot1.6975515a5ecd02880a7b.jpg",
-    "static/media/screenshot7.jpg": "/static/media/screenshot7.4d685183c3cdef6f391f.jpg",
-    "static/media/screenshot8.jpg": "/static/media/screenshot8.dacbd0daa58088d26ea6.jpg",
-    "static/media/screenshot4.jpg": "/static/media/screenshot4.43e8db12cd16ad28a5c2.jpg",
-    "static/media/screenshot6.jpg": "/static/media/screenshot6.25742d6b4e1edc33f635.jpg",
-    "static/media/screenshot5.jpg": "/static/media/screenshot5.9db009406e1513371df9.jpg",
     "static/media/icflogo.png": "/static/media/icflogo.46327be6b08a67a160e1.png",
     "static/media/cfyoutube.png": "/static/media/cfyoutube.d87a9c6a1d1105940582.png",
     "static/media/tees-logo.jpg": "/static/media/tees-logo.dd899bf6f5ccc26f6050.jpg",
+    "static/media/screenshot3.webp": "/static/media/screenshot3.f9f6e09d87efc9de1c2d.webp",
+    "static/media/screenshot1.webp": "/static/media/screenshot1.f84343b216898584d326.webp",
+    "static/media/screenshot7.webp": "/static/media/screenshot7.f092c0bd64632fd4b680.webp",
+    "static/media/screenshot2.webp": "/static/media/screenshot2.1cfba470cec41c9622d0.webp",
+    "static/media/screenshot8.webp": "/static/media/screenshot8.b70d24fa1a561c41e3f1.webp",
+    "static/media/screenshot4.webp": "/static/media/screenshot4.39728c2bc655e3a5bda0.webp",
+    "static/media/screenshot6.webp": "/static/media/screenshot6.8f9cc3e882f97729609f.webp",
+    "static/media/screenshot5.webp": "/static/media/screenshot5.1a87c8804b30ccedbe9c.webp",
     "static/media/icon.png": "/static/media/icon.1b61dea388405c8a32ec.png",
     "index.html": "/index.html",
-    "main.53ef20f6.css.map": "/static/css/main.53ef20f6.css.map",
-    "main.15a54817.js.map": "/static/js/main.15a54817.js.map",
+    "main.f6e53c35.css.map": "/static/css/main.f6e53c35.css.map",
+    "main.303a662d.js.map": "/static/js/main.303a662d.js.map",
     "453.f1ea2376.chunk.js.map": "/static/js/453.f1ea2376.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53ef20f6.css",
-    "static/js/main.15a54817.js"
+    "static/css/main.f6e53c35.css",
+    "static/js/main.303a662d.js"
   ]
 }

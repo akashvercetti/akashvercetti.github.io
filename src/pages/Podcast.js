@@ -8,9 +8,38 @@ import icflogo from '../assets/icflogo.png';
 // Replace with your actual YouTube Channel ID.
 // Find it: YouTube Studio → Customization → Basic Info → scroll to bottom
 const CHANNEL_ID = 'UCgY11M2hCN53Dng3qXlRhqw';
-const RSS_URL = `https://youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+const CHANNEL_URL = 'https://www.youtube.com/@InvertedControlFreak';
+// Use the www host. The bare youtube.com host answers with a 301, and the proxy
+// does not follow that redirect.
+const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
+
+// YouTube answers its own feed endpoint with a 404 or a 500 a good share of the
+// time. The proxy then reports a failure even though nothing is wrong with the
+// channel. A few spaced out retries almost always reach a good response.
+const FEED_ATTEMPTS = 4;
+const RETRY_BASE_MS = 700;
 // ──────────────────────────────────────────────────────────
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Returns the latest videos, or null when every attempt failed.
+const fetchLatestVideos = async (isCancelled) => {
+  for (let attempt = 0; attempt < FEED_ATTEMPTS; attempt += 1) {
+    if (attempt > 0) await wait(RETRY_BASE_MS * attempt);
+    if (isCancelled()) return null;
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+      if (data.status === 'ok' && Array.isArray(data.items) && data.items.length) {
+        return data.items.slice(0, 4);
+      }
+    } catch {
+      // Network error. Try again.
+    }
+  }
+  return null;
+};
 
 const VIDEO_LABELS = ['LATEST', 'NEW', 'RECENT', 'WATCH THIS'];
 
@@ -93,11 +122,14 @@ const VideoSkeleton = ({ label }) => (
 
 // ─── Main Component ───────────────────────────────────────
 const InvertedControlFreak = () => {
-  usePageMeta(
-    'InvertedControlFreak - Gaming YouTube Channel | Reviews & Indie Games',
-    'InvertedControlFreak is a gaming YouTube channel by a gamer dad - honest game reviews, indie gems, sale picks, news reactions, and gaming sessions with friends.',
-    cfyoutube
-  );
+  usePageMeta({
+    title: 'InvertedControlFreak - Gaming YouTube Channel | Reviews & Indie Games',
+    description: 'InvertedControlFreak is a gaming YouTube channel by a gamer dad - honest game reviews, indie gems, sale picks, news reactions, and gaming sessions with friends.',
+    siteName: 'InvertedControlFreak',
+    image: cfyoutube,
+    favicon: '/favicon-icf.ico?v=1',
+    keywords: 'InvertedControlFreak, gaming YouTube channel, game reviews, indie games, gaming news reactions, Steam sale picks, gamer dad',
+  });
 
   // Organization structured data so search engines tie this page to the
   // InvertedControlFreak YouTube channel (brand-name searches).
@@ -109,27 +141,20 @@ const InvertedControlFreak = () => {
     description: 'Gaming YouTube channel by a gamer dad - honest game reviews, indie games, sale picks, news reactions, and gaming sessions.',
     url: 'https://akashvercetti.github.io/invertedcontrolfreak',
     logo: `${SITE_ORIGIN}${cfyoutube}`,
-    sameAs: ['https://www.youtube.com/@InvertedControlFreak'],
+    sameAs: [CHANNEL_URL],
   };
 
   const [videos, setVideos]   = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState(null);
 
   useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const res  = await fetch(API_URL);
-        const data = await res.json();
-        if (data.status !== 'ok') throw new Error('Feed error');
-        setVideos(data.items.slice(0, 4));
-      } catch (err) {
-        setError('Could not load videos. Please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchVideos();
+    let cancelled = false;
+    fetchLatestVideos(() => cancelled).then((items) => {
+      if (cancelled) return;
+      if (items) setVideos(items);
+      setLoading(false);
+    });
+    return () => { cancelled = true; };
   }, []);
 
   return (
@@ -174,7 +199,7 @@ const InvertedControlFreak = () => {
             no corporate filter.
           </p>
           <a
-            href="https://www.youtube.com/@InvertedControlFreak"
+            href={CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="icc-subscribe-btn"
@@ -190,8 +215,21 @@ const InvertedControlFreak = () => {
         <h2 className="icc-section-title">Latest Videos</h2>
         <p className="icc-section-sub">Fresh from the channel</p>
 
-        {error ? (
-          <div className="icc-error">{error}</div>
+        {!loading && videos.length === 0 ? (
+          <div className="icc-feed-fallback">
+            <p className="icc-feed-fallback-text">
+              Everything new lands on the channel first.
+            </p>
+            <a
+              href={CHANNEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="icc-subscribe-btn"
+            >
+              <span className="icc-yt-icon">▶</span>
+              Watch on YouTube
+            </a>
+          </div>
         ) : (
           <div className="icc-video-grid">
             {loading
@@ -233,7 +271,7 @@ const InvertedControlFreak = () => {
             people who play them.
           </p>
           <a
-            href="https://www.youtube.com/@InvertedControlFreak"
+            href={CHANNEL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="icc-subscribe-btn icc-subscribe-btn--outline"

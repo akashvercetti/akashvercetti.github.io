@@ -1,41 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
 
+/* ─── Branding bar ──────────────────────────────────────────── */
+/* Stays in the normal flow and scrolls away. The nav below it is the part that
+   has to stay reachable. */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
   background: #0d1130;
-  border-bottom: 1px solid rgba(0, 245, 255, 0.2);
   position: relative;
   z-index: 100;
-  box-shadow: 0 4px 30px rgba(0, 245, 255, 0.08);
-}
-
-/* Animated neon gradient line at bottom of header */
-.header::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    #00f5ff,
-    #ff0080,
-    #00ffa3,
-    #00f5ff,
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: neonScan 4s linear infinite;
-}
-
-@keyframes neonScan {
-  0%   { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
 }
 
 .logo {
@@ -126,6 +101,128 @@
   flex-shrink: 0;
 }
 
+/* ─── Site nav ──────────────────────────────────────────────── */
+/* Sticky, so it stays reachable on a long page. Its height is fixed, and it
+   hides by sliding rather than by shrinking. Nothing below it ever moves. */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 101;
+  background: #0d1130;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 245, 255, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.site-nav--hidden {
+  transform: translateY(-100%);
+}
+
+/* Animated neon gradient line along the bottom edge */
+.site-nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00f5ff,
+    #ff0080,
+    #00ffa3,
+    #00f5ff,
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: neonScan 4s linear infinite;
+}
+
+@keyframes neonScan {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.site-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 20px;
+  /* Five items fit on a desktop. On a phone they scroll sideways. A drawer
+     behind a menu button would hide them behind an extra tap. */
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.site-nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.site-nav-link {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #8fa3c8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.site-nav-link:hover {
+  color: #ffffff;
+  background: rgba(0, 245, 255, 0.07);
+}
+
+.site-nav-link.is-active {
+  color: #00f5ff;
+  border-color: rgba(0, 245, 255, 0.4);
+  background: rgba(0, 245, 255, 0.08);
+}
+
+/* The name sits first and is styled apart from the destinations. It says who
+   the site belongs to, on every page. */
+.site-nav-link--wordmark {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  margin-right: 8px;
+  padding-right: 16px;
+  border-right: 1px solid rgba(0, 245, 255, 0.18);
+  border-radius: 6px 0 0 6px;
+}
+
+.site-nav-link--wordmark:hover {
+  color: #00f5ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav { transition: none; }
+}
+
+/* The nav is wider than a phone screen, so it scrolls sideways. A fade on the
+   right edge is the only sign that more items are there. Without it the row
+   looks like it ends at "Tees". */
+@media (max-width: 767px) {
+  .site-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    background: linear-gradient(90deg, rgba(13, 17, 48, 0), #0d1130);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   .header { padding: 10px 15px; }
@@ -134,6 +231,9 @@
   .google-play-badge { height: 28px; }
   .header-cta { font-size: 0.6rem; padding: 6px 10px; }
   .header-spacer { width: 42px; }
+  .site-nav-inner { padding: 8px 15px; }
+  .site-nav-link { font-size: 0.78rem; padding: 5px 9px; letter-spacing: 0.8px; }
+  .site-nav-link--wordmark { font-size: 0.72rem; letter-spacing: 0.4px; margin-right: 4px; padding-right: 10px; }
 }
 
 /* Tablet */
@@ -152,6 +252,8 @@
   .google-play-badge { height: 50px; }
   .header-cta { font-size: 0.95rem; padding: 10px 22px; }
   .header-spacer { width: 80px; }
+  .site-nav-inner { padding: 12px 40px; gap: 6px; }
+  .site-nav-link { font-size: 1rem; padding: 7px 16px; }
 }
 
 @media (min-width: 1024px) {
@@ -160,4 +262,5 @@
   .app-title { font-size: 2rem; }
   .google-play-badge { height: 58px; }
   .header-spacer { width: 90px; }
+  .site-nav-inner { padding: 12px 60px; }
 }

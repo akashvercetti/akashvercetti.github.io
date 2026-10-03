@@ -669,9 +669,62 @@
   border-color: rgba(255,255,255,0.4);
 }
 
-/* Hide site header on portfolio page only */
+/* ─── Site header on the portfolio page ───────────────────────────────────── */
+/* This page is about the person, not the app, so the Pulstral branding bar is
+   left out. The nav stays. A visitor who arrives here from a job post needs a
+   way to reach everything else. */
 .pf-page-active .header {
   display: none;
+}
+
+/* The neon bar belongs to the dark pages. Here it would fight the paper look. */
+.pf-page-active .site-nav {
+  background: var(--pf-bg);
+  border-bottom: 1px solid var(--pf-rule);
+  box-shadow: none;
+}
+
+.pf-page-active .site-nav::after {
+  display: none;
+}
+
+/* The scroll fade has to match the paper background, not the dark one. */
+.pf-page-active .site-nav::before {
+  background: linear-gradient(90deg, rgba(250, 249, 246, 0), var(--pf-bg));
+}
+
+.pf-page-active .site-nav-link {
+  font-family: var(--pf-font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  color: var(--pf-ink-mid);
+}
+
+.pf-page-active .site-nav-link:hover {
+  color: var(--pf-ink);
+  background: var(--pf-bg-shaded);
+}
+
+.pf-page-active .site-nav-link.is-active {
+  color: var(--pf-accent);
+  background: transparent;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.pf-page-active .site-nav-link--wordmark {
+  font-family: var(--pf-font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--pf-ink);
+  border-right: 1px solid var(--pf-rule);
+}
+
+.pf-page-active .site-nav-link--wordmark.is-active {
+  color: var(--pf-ink);
 }
 
 /* ─── Responsive ───────────────────────────────────────────────────────────── */

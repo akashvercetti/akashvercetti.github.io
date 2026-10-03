@@ -61,7 +61,7 @@
   font-weight: 800;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 22px;
   line-height: 1.4;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -76,6 +76,60 @@
 @keyframes titlePulse {
   0%, 100% { text-shadow: 0 0 10px rgba(0, 245, 255, 0.5), 0 0 30px rgba(0, 245, 255, 0.2); }
   50%       { text-shadow: 0 0 20px rgba(0, 245, 255, 0.8), 0 0 50px rgba(0, 245, 255, 0.3); }
+}
+
+/* Sits under the hero title. Styled as a pill so it reads as something to
+   click, not as a caption. */
+.hero-byline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto 46px;
+  padding: 9px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #a0b4d6;
+  background: rgba(0, 245, 255, 0.05);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 999px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hero-byline strong {
+  color: #00f5ff;
+  font-weight: 700;
+}
+
+.hero-byline:hover {
+  color: #ffffff;
+  border-color: #00f5ff;
+  box-shadow: 0 0 18px rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.hero-byline:hover strong {
+  color: #ffffff;
+}
+
+.hero-byline-arrow {
+  transition: transform 0.3s ease;
+}
+
+.hero-byline:hover .hero-byline-arrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-byline,
+  .hero-byline-arrow { transition: none; }
+  .hero-byline:hover { transform: none; }
+  .hero-byline:hover .hero-byline-arrow { transform: none; }
 }
 
 /* ─── Screenshot Gallery ────────────────────────────────── */
@@ -93,6 +147,9 @@
 
 .screenshot {
   width: 130px;
+  /* Pairs with the width/height attributes on the <img> so the browser can
+     reserve the right box before the file loads. */
+  height: auto;
   border: 1px solid rgba(0, 245, 255, 0.35);
   border-radius: 10px;
   box-shadow:

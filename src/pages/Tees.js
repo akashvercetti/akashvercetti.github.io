@@ -4,11 +4,13 @@ import { tees } from '../teesData';
 import './Tees.css';
 
 const Tees = () => {
-  usePageMeta(
-    'Funny Gaming & Office T-Shirts - Pulstral',
-    'Browse original funny t-shirt designs - gaming and gamer tees, office and corporate humour, coder and meme shirts. Tap any design to grab it on Frankly Wearing.',
-    tees[0] && tees[0].image
-  );
+  usePageMeta({
+    title: 'Funny Gaming & Office T-Shirts - Akash Malhotra',
+    description: 'Browse original funny t-shirt designs - gaming and gamer tees, office and corporate humour, coder and meme shirts. Tap any design to grab it on Frankly Wearing.',
+    siteName: 'Akash Malhotra',
+    image: tees[0] && tees[0].image,
+    keywords: 'funny t-shirts, gaming t-shirts, gamer tees, office humour shirts, coder t-shirt, meme shirts, retro gaming tee, Frankly Wearing',
+  });
 
   // ItemList structured data so Google understands this as a list of products
   // and can show richer results. Detail/pricing lives on the linked pages.

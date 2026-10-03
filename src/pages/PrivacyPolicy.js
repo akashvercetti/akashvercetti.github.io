@@ -4,10 +4,12 @@ import './Privacy.css';
 import { useNavigate } from 'react-router-dom';
 
 const Privacy = () => {
-  usePageMeta(
-    'Privacy Policy - Pulstral',
-    'How Pulstral handles your data: no logins, no subscriptions, no selling your data.'
-  );
+  usePageMeta({
+    title: 'Privacy Policy - Pulstral',
+    description: 'How Pulstral handles your data: no logins, no subscriptions, no selling your data.',
+    siteName: 'Pulstral',
+    image: '/logo512.png',
+  });
 
   const navigate = useNavigate();
 

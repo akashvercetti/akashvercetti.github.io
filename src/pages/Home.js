@@ -1,35 +1,66 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import usePageMeta from '../usePageMeta';
 import './Home.css';
-import screenshot1 from '../assets/screenshot1.jpg';
-import screenshot2 from '../assets/screenshot2.jpg';
-import screenshot3 from '../assets/screenshot3.jpg';
-import screenshot4 from '../assets/screenshot4.jpg';
-import screenshot5 from '../assets/screenshot5.jpg';
-import screenshot6 from '../assets/screenshot6.jpg';
-import screenshot7 from '../assets/screenshot7.jpg';
-import screenshot8 from '../assets/screenshot8.jpg';
+import screenshot1 from '../assets/screenshot1.webp';
+import screenshot2 from '../assets/screenshot2.webp';
+import screenshot3 from '../assets/screenshot3.webp';
+import screenshot4 from '../assets/screenshot4.webp';
+import screenshot5 from '../assets/screenshot5.webp';
+import screenshot6 from '../assets/screenshot6.webp';
+import screenshot7 from '../assets/screenshot7.webp';
+import screenshot8 from '../assets/screenshot8.webp';
+
+const SCREENSHOTS = [
+  { src: screenshot1, alt: 'Pulstral home feed combining game deals, news and Steam activity in one screen' },
+  { src: screenshot2, alt: 'Steam Weekly Wrapped card in Pulstral showing achievements, games played and playtime' },
+  { src: screenshot3, alt: 'Pulstral free games tracker listing current free offers with notification toggle' },
+  { src: screenshot4, alt: 'Pulstral game deals screen with discounted PC games and store prices' },
+  { src: screenshot5, alt: 'Pulstral library stats showing hours played, completion rate and rarest achievements' },
+  { src: screenshot6, alt: 'Pulstral esports screen with live match scores across CS2, Valorant and Dota 2' },
+  { src: screenshot7, alt: 'Pulstral gaming news feed with the latest stories from major outlets' },
+  { src: screenshot8, alt: 'Pulstral trailers screen showing the latest official game trailers' },
+];
+
+// Intrinsic size of the exported screenshots. Set on every <img> so the gallery
+// reserves its space before the images arrive.
+const SHOT_W = 480;
+const SHOT_H = 854;
 
 const Home = () => {
-  usePageMeta(
-    'Pulstral - Your Gaming Life, One Place',
-    'Pulstral is your all-in-one gaming companion. Track trophies and achievements across PlayStation, Xbox, Steam and RetroAchievements, plus game deals, free games, esports, news and trailers - all in one free app.'
-  );
+  usePageMeta({
+    title: 'Pulstral - Your Gaming Life, One Place',
+    description: 'Pulstral is your all-in-one gaming companion. Track trophies and achievements across PlayStation, Xbox, Steam and RetroAchievements, plus game deals, free games, esports, news and trailers - all in one free app.',
+    siteName: 'Pulstral',
+    image: '/logo512.png',
+    keywords: 'gaming app, trophy tracker, achievement tracker, PlayStation trophies, Xbox achievements, RetroAchievements, Steam stats, Pulstral Score, game deals, free games, esports, gaming news, game trailers, price tracker, Pulstral',
+  });
 
   return (
     <div className="home-container">
       {/* Hero Section with Screenshots */}
       <section className="hero-section">
         <h1 className="hero-title">Pulstral - Your Gaming Life, One Place</h1>
+        {/* This URL is the app's page. A visitor who arrives from a job post
+            needs one clear way to reach the person who made it. */}
+        <Link to="/portfolio" className="hero-byline">
+          Built by <strong>Akash Malhotra</strong>
+          <span className="hero-byline-arrow" aria-hidden="true">&rarr;</span>
+        </Link>
         <div className="screenshot-gallery">
-          <img src={screenshot1} alt="Pulstral Screenshot 1" className="screenshot" />
-          <img src={screenshot2} alt="Pulstral Screenshot 2" className="screenshot" />
-          <img src={screenshot3} alt="Pulstral Screenshot 3" className="screenshot" />
-          <img src={screenshot4} alt="Pulstral Screenshot 4" className="screenshot" />
-          <img src={screenshot5} alt="Pulstral Screenshot 5" className="screenshot" />
-          <img src={screenshot6} alt="Pulstral Screenshot 6" className="screenshot" />
-          <img src={screenshot7} alt="Pulstral Screenshot 7" className="screenshot" />
-          <img src={screenshot8} alt="Pulstral Screenshot 8" className="screenshot" />
+          {SCREENSHOTS.map((shot, i) => (
+            <img
+              key={shot.src}
+              src={shot.src}
+              alt={shot.alt}
+              className="screenshot"
+              width={SHOT_W}
+              height={SHOT_H}
+              /* The first row is above the fold on desktop, so it loads eagerly. */
+              loading={i < 4 ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          ))}
         </div>
       </section>
 

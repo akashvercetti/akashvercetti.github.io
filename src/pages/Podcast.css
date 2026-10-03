@@ -407,16 +407,26 @@
   to   { background-position: -200% 0; }
 }
 
-/* ─── Error state ───────────────────────────────────────── */
-.icc-error {
+/* ─── Feed fallback ─────────────────────────────────────── */
+/* Shown when the YouTube feed cannot be reached. It points at the channel
+   instead of telling the visitor that something is broken. */
+.icc-feed-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   text-align: center;
-  color: #ff6060;
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 40px;
-  border: 1px solid rgba(255, 60, 60, 0.3);
+  padding: 48px 24px;
+  border: 1px solid rgba(0, 245, 255, 0.2);
   border-radius: 12px;
-  background: rgba(255, 0, 0, 0.05);
+  background: linear-gradient(135deg, #0d1130 0%, #0f1535 100%);
+}
+
+.icc-feed-fallback-text {
+  margin: 0;
+  color: #a0b4d6;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /* ─── Content Type Cards ────────────────────────────────── */

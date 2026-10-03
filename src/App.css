@@ -1,8 +1,15 @@
 /* App.css — Cyberpunk Theme */
-html, body {
-  height: 100%;
-  margin: 0;
+html {
+  /* Keep the horizontal clip on html only. Putting it on body as well, together
+     with a fixed height, turns body into its own scroll container. The page then
+     scrolls inside body instead of the viewport, which breaks window.scrollTo,
+     anchor links, and the way mobile browsers hide the address bar. */
   overflow-x: hidden;
+  background: #070b1a;
+}
+
+body {
+  margin: 0;
   background: #070b1a;
 }
 

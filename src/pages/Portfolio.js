@@ -126,10 +126,14 @@ const Counter = ({ value, suffix }) => {
 
 // ─── Main Component ────────────────────────────────────────────────────────────
 const Portfolio = () => {
-  usePageMeta(
-    'Akash Malhotra - iOS Engineer & Engineering Manager',
-    'Portfolio of Akash Malhotra: 15+ years of iOS development, engineering leadership, and SDKs used across 1000+ apps.'
-  );
+  // No `image`: this page has no artwork of its own, and inheriting the
+  // Pulstral app icon would make every shared link look like a gaming app.
+  usePageMeta({
+    title: 'Akash Malhotra - iOS Engineer & Engineering Manager',
+    description: 'Portfolio of Akash Malhotra: 15+ years of iOS development, engineering leadership, and SDKs used across 1000+ apps.',
+    siteName: 'Akash Malhotra',
+    keywords: 'Akash Malhotra, senior iOS engineer, iOS engineering manager, Swift, Objective-C, SwiftUI, UIKit, iOS SDK development, SDK architecture, iOS framework design, CocoaPods, Swift Package Manager, remote iOS engineer, Mumbai',
+  });
 
   // Person structured data so search engines tie this page to Akash Malhotra
   // (name searches, knowledge panel). Built from data already on the page.

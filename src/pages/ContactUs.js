@@ -3,10 +3,12 @@ import usePageMeta from '../usePageMeta';
 import './ContactUs.css';
 
 const ContactUs = () => {
-  usePageMeta(
-    'Contact Me - Pulstral',
-    'Get in touch. Report bugs, request features, or just say hi.'
-  );
+  usePageMeta({
+    title: 'Contact Me - Pulstral',
+    description: 'Get in touch. Report bugs, request features, or just say hi.',
+    siteName: 'Pulstral',
+    image: '/logo512.png',
+  });
 
   return (
     <div className="contact-container">

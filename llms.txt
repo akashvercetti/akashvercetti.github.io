@@ -1,0 +1,30 @@
+# Pulstral
+
+> Pulstral is a free Android app that brings a gamer's whole life into one place: trophy and achievement tracking across PlayStation, Xbox, Steam and RetroAchievements, plus game deals, free game giveaways, esports scores, gaming news and trailers. No account is required and there are no in-app purchases.
+
+This site is the home of Pulstral. It also hosts the portfolio of the app's author, Akash Malhotra, a senior iOS engineer and engineering manager, along with his t-shirt designs and his gaming YouTube channel.
+
+Key facts:
+
+- Platform: Android only. Install from the Google Play Store.
+- Price: free. No subscriptions and no in-app purchases.
+- Accounts: none needed. Platform linking uses only a public username, never a password.
+- Package name: com.akashvercetti.gameshortsxp
+- Author: Akash Malhotra
+- Contact: carljohnson.akash@gmail.com
+
+## Pulstral app
+
+- [Pulstral home](https://akashvercetti.github.io/): Full feature list for the app, with screenshots. Covers the free games tracker, deal and price alerts, Achievement Hunter, Pulstral Score, Can I Run It, esports, news, trailers, backlog manager, and PS Plus and Game Pass catalog search.
+- [Pulstral on Google Play](https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp): Install page, current version and user reviews.
+- [Contact](https://akashvercetti.github.io/contact-us/): How to report a bug or request a feature.
+- [Privacy policy](https://akashvercetti.github.io/privacy-policy/): What data the app handles.
+
+## Author
+
+- [Akash Malhotra portfolio](https://akashvercetti.github.io/portfolio/): Senior iOS engineer and engineering manager based in Mumbai, India. Swift, Objective-C, SwiftUI, UIKit, iOS SDK and framework architecture. Includes work history and skills.
+
+## Optional
+
+- [Gaming and office tees](https://akashvercetti.github.io/tees/): Original t-shirt designs covering gaming, office humour, coder and meme themes. Sold through Frankly Wearing.
+- [InvertedControlFreak](https://akashvercetti.github.io/invertedcontrolfreak/): Gaming YouTube channel by a gamer dad. Game reviews, indie games, sale picks and news reactions.

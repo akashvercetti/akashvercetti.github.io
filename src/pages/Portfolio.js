@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import usePageMeta from '../usePageMeta';
+import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
 import './Portfolio.css';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -142,7 +142,7 @@ const Portfolio = () => {
     '@type': 'Person',
     name: 'Akash Malhotra',
     jobTitle: 'Senior iOS Engineer & Engineering Manager',
-    url: 'https://akashvercetti.github.io/portfolio',
+    url: `${SITE_ORIGIN}/portfolio/`,
     email: 'akash24888@gmail.com',
     worksFor: { '@type': 'Organization', name: 'CleverTap' },
     alumniOf: { '@type': 'CollegeOrUniversity', name: 'Mumbai University' },

@@ -139,7 +139,7 @@ const InvertedControlFreak = () => {
     name: 'InvertedControlFreak',
     alternateName: 'Inverted Control Freak',
     description: 'Gaming YouTube channel by a gamer dad - honest game reviews, indie games, sale picks, news reactions, and gaming sessions.',
-    url: 'https://akashvercetti.github.io/invertedcontrolfreak',
+    url: `${SITE_ORIGIN}/invertedcontrolfreak/`,
     logo: `${SITE_ORIGIN}${cfyoutube}`,
     sameAs: [CHANNEL_URL],
   };

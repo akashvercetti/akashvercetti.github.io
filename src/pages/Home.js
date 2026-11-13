@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import usePageMeta from '../usePageMeta';
+import usePageMeta, { SITE_ORIGIN, AUTHOR } from '../usePageMeta';
 import './Home.css';
 import screenshot1 from '../assets/screenshot1.webp';
 import screenshot2 from '../assets/screenshot2.webp';
@@ -27,6 +27,37 @@ const SCREENSHOTS = [
 const SHOT_W = 480;
 const SHOT_H = 854;
 
+const PLAY_STORE_URL =
+  'https://play.google.com/store/apps/details?id=com.akashvercetti.gameshortsxp';
+
+// Every entry here has its own heading in the page body below. Keep the two
+// lists in step. An answer engine that reads only the structured data must see
+// the same feature set as a person who reads the page.
+const FEATURES = [
+  'Free games tracker across Epic Games Store, Amazon Prime Gaming, GOG and Steam',
+  'PC game deals, price history charts and target-price alerts',
+  'Store coupon codes',
+  'Achievement Hunter across Steam, PlayStation, Xbox and RetroAchievements',
+  'Achievement and trophy timeline',
+  'Library stats: hours played, completion rate, genre breakdown',
+  'PlayStation trophy dashboard, Road to Platinum and Trophy Case',
+  'Xbox Gamerscore dashboard and completion predictions',
+  'RetroAchievements mastery and streak tracking',
+  'Pulstral Score achievement skill rating with 15 rank tiers',
+  'Combined Gaming cross-platform profile',
+  'Shareable Now Playing card',
+  'Can I Run It PC specs checker with upscaling and bottleneck detection',
+  'Gaming news feed from IGN, Eurogamer, Gamespot, Kotaku and Rock Paper Shotgun',
+  'Esports scores and tournaments for CS2, Dota 2, League of Legends and Valorant',
+  'HoYo Showcase for Genshin Impact, Honkai: Star Rail and Zenless Zone Zero',
+  'Game backlog manager with Steam library sync',
+  'Free-to-play redemption codes',
+  'Game trailers',
+  'Upcoming releases and gaming event calendar',
+  'PlayStation Plus and Xbox Game Pass catalog search',
+  'Home screen widgets',
+];
+
 const Home = () => {
   usePageMeta({
     title: 'Pulstral - Your Gaming Life, One Place',
@@ -36,8 +67,61 @@ const Home = () => {
     keywords: 'gaming app, trophy tracker, achievement tracker, PlayStation trophies, Xbox achievements, RetroAchievements, Steam stats, Pulstral Score, game deals, free games, esports, gaming news, game trailers, price tracker, Pulstral',
   });
 
+  // Describes the app itself to search engines and to assistants that answer
+  // from structured data. The two nodes are joined by @id, so a reader can tell
+  // that this site and this app stand for the same thing.
+  //
+  // Google also asks for aggregateRating or review before it will draw the
+  // software rich result. Neither is here on purpose. A rating may only be
+  // marked up when the same number is shown on the page, and no rating is shown
+  // yet. The markup is still valid without it.
+  const appSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': ['SoftwareApplication', 'MobileApplication'],
+        '@id': `${SITE_ORIGIN}/#pulstral`,
+        name: 'Pulstral',
+        applicationCategory: 'GameApplication',
+        operatingSystem: 'Android',
+        description:
+          'Pulstral is an all-in-one gaming companion app. It tracks trophies and achievements across PlayStation, Xbox, Steam and RetroAchievements, and covers game deals, free games, esports, news and trailers. No account is required.',
+        url: `${SITE_ORIGIN}/`,
+        installUrl: PLAY_STORE_URL,
+        downloadUrl: PLAY_STORE_URL,
+        image: `${SITE_ORIGIN}/logo512.png`,
+        screenshot: SCREENSHOTS.map((shot) => `${SITE_ORIGIN}${shot.src}`),
+        featureList: FEATURES,
+        isAccessibleForFree: true,
+        inLanguage: 'en',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        author: {
+          '@type': 'Person',
+          name: AUTHOR,
+          url: `${SITE_ORIGIN}/portfolio/`,
+        },
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_ORIGIN}/#website`,
+        name: 'Pulstral',
+        url: `${SITE_ORIGIN}/`,
+        about: { '@id': `${SITE_ORIGIN}/#pulstral` },
+        inLanguage: 'en',
+      },
+    ],
+  };
+
   return (
     <div className="home-container">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
+      />
       {/* Hero Section with Screenshots */}
       <section className="hero-section">
         <h1 className="hero-title">Pulstral - Your Gaming Life, One Place</h1>

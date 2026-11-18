@@ -64,6 +64,24 @@
   margin: 18px auto 0;
 }
 
+/* Sits under the intro paragraph in the tees hero. */
+.tees-byline {
+  font-size: 0.9rem;
+  color: #6b7b9c;
+  font-weight: 500;
+  margin: 14px auto 0;
+}
+
+.tees-byline-link {
+  color: #c9d6ec;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tees-byline-link:hover {
+  color: #fff;
+}
+
 /* ─── Grid ──────────────────────────────────────────────── */
 .tees-grid {
   display: grid;

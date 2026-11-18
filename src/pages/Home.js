@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import usePageMeta, { SITE_ORIGIN, AUTHOR } from '../usePageMeta';
+import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
+import { PERSON_ID, personRef } from '../personSchema';
 import './Home.css';
 import screenshot1 from '../assets/screenshot1.webp';
 import screenshot2 from '../assets/screenshot2.webp';
@@ -99,12 +100,9 @@ const Home = () => {
           price: '0',
           priceCurrency: 'USD',
         },
-        author: {
-          '@type': 'Person',
-          name: AUTHOR,
-          url: `${SITE_ORIGIN}/portfolio/`,
-        },
+        author: { '@id': PERSON_ID },
       },
+      personRef,
       {
         '@type': 'WebSite',
         '@id': `${SITE_ORIGIN}/#website`,

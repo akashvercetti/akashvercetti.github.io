@@ -1,5 +1,7 @@
 import React from 'react';
-import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
+import { Link } from 'react-router-dom';
+import usePageMeta, { SITE_ORIGIN, AUTHOR } from '../usePageMeta';
+import { PERSON_ID, personRef } from '../personSchema';
 import { tees } from '../teesData';
 import './Tees.css';
 
@@ -14,17 +16,26 @@ const Tees = () => {
 
   // ItemList structured data so Google understands this as a list of products
   // and can show richer results. Detail/pricing lives on the linked pages.
+  // ItemList on its own cannot name an author. It is an Intangible, not a
+  // CreativeWork. Both types are listed so that `author` becomes allowed.
   const itemListSchema = {
     '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    name: 'Funny Gaming & Office Tees',
-    itemListElement: tees.map((tee, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: tee.title.trim(),
-      image: `${SITE_ORIGIN}${tee.image}`,
-      url: tee.url,
-    })),
+    '@graph': [
+      {
+        '@type': ['ItemList', 'CreativeWork'],
+        '@id': `${SITE_ORIGIN}/tees/#tees`,
+        name: 'Funny Gaming & Office Tees',
+        author: { '@id': PERSON_ID },
+        itemListElement: tees.map((tee, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: tee.title.trim(),
+          image: `${SITE_ORIGIN}${tee.image}`,
+          url: tee.url,
+        })),
+      },
+      personRef,
+    ],
   };
 
   return (
@@ -46,6 +57,14 @@ const Tees = () => {
           corporate office jokes inspired by classics like Tekken, GTA and The
           Office. Every design is printed on demand by Frankly Wearing, so tap a
           tee to see sizes, colours and pricing.
+        </p>
+        {/* Names the designer in plain text. The structured data makes the same
+            claim. A search engine trusts that claim more when the page itself
+            says it. */}
+        <p className="tees-byline">
+          Designed by{' '}
+          <Link to="/portfolio" className="tees-byline-link">{AUTHOR}</Link>
+          {' '}(akashvercetti)
         </p>
       </section>
 

@@ -161,8 +161,26 @@
   color: #a0b4d6;
   line-height: 1.7;
   max-width: 600px;
-  margin: 0 auto 36px;
+  margin: 0 auto 16px;
   font-weight: 500;
+}
+
+/* Sits between the channel description and the Visit Channel button. */
+.icc-byline {
+  font-size: 0.95rem;
+  color: #7f93b4;
+  margin: 0 auto 32px;
+  font-weight: 500;
+}
+
+.icc-byline-link {
+  color: #d7e3f7;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.icc-byline-link:hover {
+  color: #fff;
 }
 
 /* ─── Buttons ───────────────────────────────────────────── */

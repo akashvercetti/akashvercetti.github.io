@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
+import { PERSON_ID, PERSON_SAME_AS, PERSON_ALTERNATE_NAMES } from '../personSchema';
 import './Portfolio.css';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -137,20 +138,31 @@ const Portfolio = () => {
 
   // Person structured data so search engines tie this page to Akash Malhotra
   // (name searches, knowledge panel). Built from data already on the page.
+  //
+  // This page holds the full record. Other pages hold a short copy of it. All
+  // copies share one @id. See src/personSchema.js for the reason.
   const personSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: 'Akash Malhotra',
-    jobTitle: 'Senior iOS Engineer & Engineering Manager',
-    url: `${SITE_ORIGIN}/portfolio/`,
-    email: 'akash24888@gmail.com',
-    worksFor: { '@type': 'Organization', name: 'CleverTap' },
-    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Mumbai University' },
-    address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressCountry: 'India' },
-    knowsAbout: [...SKILLS_TECH, ...SKILLS_LEAD],
-    sameAs: [
-      'https://www.linkedin.com/in/akash-malhotra-9b492671',
-      'https://github.com/akashvercetti',
+    '@graph': [
+      {
+        '@type': 'ProfilePage',
+        '@id': `${SITE_ORIGIN}/portfolio/#profilepage`,
+        mainEntity: { '@id': PERSON_ID },
+      },
+      {
+        '@type': 'Person',
+        '@id': PERSON_ID,
+        name: 'Akash Malhotra',
+        alternateName: PERSON_ALTERNATE_NAMES,
+        jobTitle: 'Senior iOS Engineer & Engineering Manager',
+        url: `${SITE_ORIGIN}/portfolio/`,
+        email: 'akash24888@gmail.com',
+        worksFor: { '@type': 'Organization', name: 'CleverTap' },
+        alumniOf: { '@type': 'CollegeOrUniversity', name: 'Mumbai University' },
+        address: { '@type': 'PostalAddress', addressLocality: 'Mumbai', addressCountry: 'India' },
+        knowsAbout: [...SKILLS_TECH, ...SKILLS_LEAD],
+        sameAs: PERSON_SAME_AS,
+      },
     ],
   };
 

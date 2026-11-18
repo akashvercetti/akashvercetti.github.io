@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import usePageMeta, { SITE_ORIGIN } from '../usePageMeta';
+import { Link } from 'react-router-dom';
+import usePageMeta, { SITE_ORIGIN, AUTHOR } from '../usePageMeta';
+import { PERSON_ID, personRef } from '../personSchema';
 import './Podcast.css';
 import cfyoutube from '../assets/cfyoutube.png';
 import icflogo from '../assets/icflogo.png';
@@ -9,6 +11,9 @@ import icflogo from '../assets/icflogo.png';
 // Find it: YouTube Studio → Customization → Basic Info → scroll to bottom
 const CHANNEL_ID = 'UCgY11M2hCN53Dng3qXlRhqw';
 const CHANNEL_URL = 'https://www.youtube.com/@InvertedControlFreak';
+// Names the channel inside the structured data. It is not a web address that a
+// browser opens. The name differs from CHANNEL_ID above, which YouTube uses.
+const CHANNEL_NODE_ID = `${SITE_ORIGIN}/invertedcontrolfreak/#channel`;
 // Use the www host. The bare youtube.com host answers with a 301, and the proxy
 // does not follow that redirect.
 const RSS_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
@@ -133,15 +138,30 @@ const InvertedControlFreak = () => {
 
   // Organization structured data so search engines tie this page to the
   // InvertedControlFreak YouTube channel (brand-name searches).
+  //
+  // The channel and the person are two separate records here. `founder` joins
+  // them. A search engine can then answer "who is InvertedControlFreak".
   const channelSchema = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'InvertedControlFreak',
-    alternateName: 'Inverted Control Freak',
-    description: 'Gaming YouTube channel by a gamer dad - honest game reviews, indie games, sale picks, news reactions, and gaming sessions.',
-    url: `${SITE_ORIGIN}/invertedcontrolfreak/`,
-    logo: `${SITE_ORIGIN}${cfyoutube}`,
-    sameAs: [CHANNEL_URL],
+    '@graph': [
+      {
+        '@type': 'ProfilePage',
+        '@id': `${SITE_ORIGIN}/invertedcontrolfreak/#profilepage`,
+        mainEntity: { '@id': CHANNEL_NODE_ID },
+      },
+      {
+        '@type': 'Organization',
+        '@id': CHANNEL_NODE_ID,
+        name: 'InvertedControlFreak',
+        alternateName: 'Inverted Control Freak',
+        description: 'Gaming YouTube channel by a gamer dad - honest game reviews, indie games, sale picks, news reactions, and gaming sessions.',
+        url: `${SITE_ORIGIN}/invertedcontrolfreak/`,
+        logo: `${SITE_ORIGIN}${cfyoutube}`,
+        sameAs: [CHANNEL_URL],
+        founder: { '@id': PERSON_ID },
+      },
+      personRef,
+    ],
   };
 
   const [videos, setVideos]   = useState([]);
@@ -197,6 +217,14 @@ const InvertedControlFreak = () => {
             A gamer dad sharing honest takes on games. Indie gems, sale picks,
             news reactions, reviews and sessions with friends. Real experiences,
             no corporate filter.
+          </p>
+          {/* Names the person behind the channel in plain text. The structured
+              data makes the same claim. A search engine trusts that claim more
+              when the page itself says it. */}
+          <p className="icc-byline">
+            Created by{' '}
+            <Link to="/portfolio" className="icc-byline-link">{AUTHOR}</Link>
+            {' '}(akashvercetti)
           </p>
           <a
             href={CHANNEL_URL}
